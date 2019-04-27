@@ -9,6 +9,9 @@ const parseCommands = ({ commands = [], pure = false }) => {
       idx = process.argv.indexOf(tasks)
       key = tasks
     } else {
+      if (!is.array(tasks)) {
+        tasks = [tasks]
+      }
       const idxArray = tasks
         .filter(task => process.argv.includes(task))
         .map(task => process.argv.indexOf(task))
