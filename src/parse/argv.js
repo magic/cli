@@ -52,11 +52,11 @@ const parseArgv = ({
       if (is.empty(k)) {
         args[k] = v
 
-        argv.push(k)
+        args.push(k)
         if (!is.array(v)) {
           v = [v]
         }
-        v.forEach(vv => argv.push(vv))
+        v.forEach(vv => args.push(vv))
       }
     })
   }
