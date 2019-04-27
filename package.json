@@ -13,9 +13,6 @@
     "calls": "calls"
   },
   "main": "src/index.js",
-  "bin": {
-    "magic": "src/bin.js"
-  },
   "files": [
     "src"
   ],
