@@ -2,18 +2,28 @@
 
 const cli = require('./src')
 
-const help = 'help text'
+const simpleHelp = 'custom help text'
 
-const commands = [
-  ['magic', 'm'],
-]
-const options = [
-  ['--spell', '-s'],
-]
-const env = [
-  [['dev', 'development'], 'NODE_ENV', 'development'],
-]
+const complexHelp = {
+  name: 'cli name',
+  text: 'custom help text',
+  commands: {
+    magic: 'magic info help text',
+  },
+  options: {
+    '--spell': 'cast a simple spell',
+  },
+}
 
-const argv = cli({ help, commands, options, env })
+const args = {
+  commands: [['magic', 'm']],
+  options: [['--spell', '-s', '--s']],
+  env: [[['dev', 'development'], 'NODE_ENV', 'development']],
+  prepend: 'prepend',
+  append: 'append',
+  help: complexHelp,
+}
+const argv = cli(args)
 
-console.log(argv)
+// console.log(process.argv)
+// console.log(argv)
