@@ -1,11 +1,16 @@
 const { exec } = require('child_process')
+const log = require('@magic/log')
 
 const maybeHelp = require('./help')
 const parse = require('./parse')
 
 const cli = (args = {}) => {
   const parsed = parse(args)
-  maybeHelp({ args, parsed })
+  const helpText = maybeHelp({ args, parsed })
+  if (helpText) {
+    log(helpText)
+    process.exit()
+  }
 
   return parsed
 }
