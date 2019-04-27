@@ -3,4 +3,6 @@ module.exports = {
   PUBLIC: 'docs',
 
   THEME: 'docs',
+
+  WEB_ROOT: '/cli/',
 }
