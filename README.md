@@ -152,26 +152,75 @@ const argv = cli(args)
 at the moment, @magic/cli will just show a simple message that no help text was set.
 in the future, we will parse your configuration and create a help text based on it.
 
-to overwrite this default behaviour, simply add a .help string to the configuration object
+#### <a name="help-simple"></a>simple help message
 ```javascript
 const cli = require('@magic/cli')
 
 const args = {
-  help: 'this can be any text with info about your app'
+  commands: [['magic', 'm']],
+  options: [['--spell', '-s']],
+  env: [[['dev', 'development'], 'NODE_ENV', 'development']],
+  prepend: 'prepend',
+  append: 'append',
+  help: 'custom help text',
 }
 
 const argv = cli(args)
 
-// returns
-{
-    env: [], // array of environment settings
-    environment: [], // copy of env
-    argv: {}, // object with argv key: value pairs
-    options: {}, // copy of argv
-    cmds: {}, // object with commands
-    commands: {}, // copy of cmds
-}
+// running
+./bin.js
+// without arguments
+
+// help output
+`
+@magic/cli wrapped cli.
+
+custom help text
+
+cli commands
+magic - aliases: ["m"]
+
+
+possible command line flags:
+--spell - aliases: ["-s"]
+
+
+environment switches:
+dev: set NODE_ENV to development - aliases ["development"]
+`
 ```
+
+#### <a name="help-detailed"></a>detailed help message
+the help property will accept an object which maps to the args object
+```javascript
+const cli = require('@magic/cli')
+
+const args = {
+  commands: [['magic', 'm']],
+  options: [['--spell', '-s']],
+  env: [[['dev', 'development'], 'NODE_ENV', 'development']],
+  prepend: 'prepend',
+  append: 'append',
+  help: {
+    name: 'cli name',
+    text: 'custom help text',
+    commands: ['magic', 'magic info help text'],
+    options: ['--spell', 'cast a simple spell'],
+    env: ['dev', 'set environment to development'],
+}
+
+const argv = cli(args)
+
+// running
+./bin.js
+// without arguments
+
+// help output
+`
+
+`
+```
+
 
 ### <a name="config"></a>configuration
 there are some configuration parameters that can be passed to the cli function
