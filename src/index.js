@@ -8,7 +8,6 @@ const parseArgv = ({
   append = {},
   default: def = {},
   pure = false,
-  pureArgv = false,
 }) => {
   let lastArg
   const args = {}
@@ -37,7 +36,7 @@ const parseArgv = ({
       if (argsArg) {
         lastArg = argsArg
         args[lastArg] = []
-        if (!pure && !pureArgv) {
+        if (!pure) {
           process.argv[i] = lastArg
         }
       }
@@ -92,27 +91,40 @@ const parseArgv = ({
     })
   }
 
-  if (!pure && !pureArgv) {
+  if (!pure) {
     process.argv = [argv1, argv2, ...argvAppend, ...argv, ...argvPrepend]
   }
 
   return args
 }
 
-const parseCmds = ({ commands = [] }) => {
+const parseCmds = ({ commands = [], pure = false }) => {
   const cmds = {}
   commands.map((tasks = []) => {
-    if (is.string(tasks) && process.argv.includes(task)) {
-      cmds[tasks] = true
-    } else if (tasks.some(task => process.argv.includes(task))) {
-      cmds[tasks[0]] = true
+    let key
+    let idx = -1
+    if (is.string(tasks) && process.argv.includes(tasks)) {
+      idx = process.argv.indexOf(tasks)
+      key = tasks
+      // cmds[tasks] = true
+    } else {
+      const idxArray = tasks
+        .filter( task => process.argv.includes(task))
+        .map(task => process.argv.indexOf(task))
+      idx = idxArray[0]
+      key = tasks[0]
+    }
+
+    cmds[key] = true
+    if (!pure) {
+      process.argv[idx] = key
     }
   })
 
   return cmds
 }
 
-const parseEnv = ({ env = [], pure = false, pureEnv = false }) => {
+const parseEnv = ({ env = [], pure = false }) => {
   const environment = []
 
   // set env depending on env switches
@@ -125,7 +137,7 @@ const parseEnv = ({ env = [], pure = false, pureEnv = false }) => {
     })
     .map(([_, key, val]) => {
       environment[key] = val
-      if (!pure && !pureEnv) {
+      if (!pure) {
         process.env[key] = val
       }
     })
@@ -134,9 +146,9 @@ const parseEnv = ({ env = [], pure = false, pureEnv = false }) => {
 }
 
 const parse = args => {
-  const env = parseEnv(args)
-  const argv = parseArgv(args)
-  const cmds = parseCmds(args)
+  const env = parseEnv({ ...args, pure: args.pure || args.pureEnv })
+  const argv = parseArgv({ ...args, pure: args.pure || args.pureArgv })
+  const cmds = parseCmds({ ...args, pure: args.pure || args.pureCommands })
   return {
     env,
     environment: env,
@@ -152,8 +164,9 @@ const maybeHelp = ({ args, parsed }) => {
 
   const hasArgs = Object.values(parsed).some(a => !is.empty(a))
   const flags = ['help', 'h', '-h', '--h', '--help']
-  const showHelp = flags.some(a => process.argv.includes(a))
-  if (!hasArgs || showHelp) {
+  const showHelp = !hasArgs || flags.some(a => process.argv.includes(a))
+
+  if (showHelp) {
     log(help)
     process.exit()
   }
@@ -164,13 +177,6 @@ const cli = (args = {}) => {
 
   const parsed = parse(args)
   maybeHelp({ args, parsed })
-
-  const hasArgs = Object.values(parsed).some(a => !is.empty(a))
-  const showHelp = hasArgs || flags.some(a => process.argv.includes(a))
-  if (showHelp) {
-    log(help)
-    process.exit()
-  }
 
   return parsed
 }
