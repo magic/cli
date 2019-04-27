@@ -1,7 +1,7 @@
 {
   "name": "@magic/cli",
   "version": "0.0.1",
-  "homepage": "https://magic.github.io/core",
+  "homepage": "https://magic.github.io/cli",
   "description": "declarative command line interfaces with aliasing, commands and environment sanitization",
   "scripts": {
     "start": "t -p",
