@@ -204,9 +204,14 @@ const args = {
   help: {
     name: 'cli name',
     text: 'custom help text',
-    commands: ['magic', 'magic info help text'],
-    options: ['--spell', 'cast a simple spell'],
+    commands: {
+      magic: 'magic info help text',
+    },
+    options: {
+      '--spell': 'cast a simple spell',
+    },
     env: ['dev', 'set environment to development'],
+  },
 }
 
 const argv = cli(args)
@@ -217,7 +222,18 @@ const argv = cli(args)
 
 // help output
 `
+cli name
 
+custom help text
+
+commands:
+magic - aliases: ["m"]
+
+flags:
+--spell - aliases: ["-s"]
+
+environment switches:
+dev: set process.NODE_ENV to development - aliases ["development"]
 `
 ```
 
