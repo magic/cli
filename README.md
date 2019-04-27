@@ -253,7 +253,7 @@ const args = {
 cli(args)
 ```
 
-### <a name="prepend-append></a>prepend/append
+### <a name="prepend-append"></a>prepend/append
 process.argv values can be prepended and appended
 ```javascript
 const cli = require('@magic/cli)
