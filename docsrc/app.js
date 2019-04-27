@@ -1,5 +1,6 @@
 module.exports = {
   state: {
+    logotext: '@magic/cli',
     menu: [
       { to: '/#dependencies', text: 'dependencies' },
       { to: '/#install', text: 'install' },
