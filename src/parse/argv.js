@@ -16,9 +16,6 @@ const parseArgv = ({
     if (i <= 2) {
       return arg
     }
-    if (arg.startsWith('-') && !options.some(opt => opt.some(o => o === arg))) {
-      log.warn('Unknown cli flag:', arg)
-    }
 
     if (arg.startsWith('-')) {
       let argsArg
