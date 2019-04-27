@@ -13,7 +13,7 @@ const parseArgv = ({
   // arguments are all strings starting with a -,
   // values are all strings between strings starting with a -.
   process.argv.forEach((arg, i) => {
-    if (i <= 2) {
+    if (i <= 1) {
       return arg
     }
 
