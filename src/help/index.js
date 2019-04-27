@@ -10,8 +10,9 @@ const maybeHelp = ({ args, parsed }) => {
   const hasArgs = Object.values(parsed).some(a => !is.empty(a))
   const flags = ['help', 'h', '-h', '--h', '--help']
   const showHelp = !hasArgs || flags.some(a => process.argv.includes(a))
+  const hasCommands = !is.empty(args.commands)
 
-  if (!showHelp) {
+  if (!showHelp || !hasCommands) {
     return false
   }
 
@@ -47,7 +48,7 @@ const maybeHelp = ({ args, parsed }) => {
     prependHelp,
     appendHelp,
     defaultHelp,
-    help.examples,
+    help.example,
   ]
 
   return helpArray.filter(a => a).join('')
