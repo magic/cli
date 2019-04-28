@@ -1,0 +1,30 @@
+# http://www.appveyor.com/docs/appveyor-yml
+
+version: "{build}"
+
+environment:
+  matrix:
+    - nodejs_version: "10"
+      platform: x64
+    - nodejs_version: "10"
+      platform: x86
+
+matrix:
+  fast_finish: true
+
+install:
+  # Build
+  - npm install
+  - npm test
+
+cache:
+  # local npm modules
+  - 'node_modules -> package.json'
+  # npm cache
+  - '%APPDATA%\npm-cache'
+
+build: off
+
+test: off
+
+deploy: off
