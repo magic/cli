@@ -220,7 +220,7 @@ dev: set process.NODE_ENV to development - aliases ["development"]
     h3({ id: 'config' }, 'configuration'),
     p('there are some configuration parameters that can be passed to the cli function'),
 
-    h4({ id: 'configuration-pure' }, 'pure'),
+    h4({ id: 'config-pure' }, 'pure'),
     Pre.View(`
 const args = {
   pure: false,    // set to true to prevent changes to process.argv and process.env
@@ -230,7 +230,7 @@ const args = {
 
 cli(args)`),
 
-    h3({ id: 'prepend-append' }, 'prepend/append'),
+    h3({ id: 'config-prepend-append' }, 'prepend/append'),
     p('process.argv values can be prepended and appended'),
     Pre.View(`
 const cli = require('@magic/cli)
@@ -242,7 +242,7 @@ const args = {
 
 cli(args)`),
 
-    h4({ id: 'default' }, 'default'),
+    h4({ id: 'config-default' }, 'default'),
     p('use this to set default process.argv key: value pairs that should be set if they are not'),
     Pre.View(`
 const cli = require('@magic/cli')

@@ -10,12 +10,12 @@ module.exports = {
       { to: '/#commands', text: 'commands' },
       { to: '/#help', text: 'help' },
       {
-        to: '/#configuration',
-        text: 'config',
+        to: '/#config',
+        text: 'configuration',
         items: [
-          { to: '/#configuration-pure', text: 'pure' },
-          { to: '/#prepend-append', text: 'append / prepend' },
-          { to: '/#default', text: 'default' },
+          { to: '/#config-pure', text: 'pure' },
+          { to: '/#config-prepend-append', text: 'append / prepend' },
+          { to: '/#config-default', text: 'default' },
         ],
       },
     ],
