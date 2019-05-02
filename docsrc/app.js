@@ -1,8 +1,9 @@
 module.exports = {
   state: {
+    title: '@magic/cli',
+    description: 'declarative cli wrapper for @magic',
     logotext: '@magic/cli',
     menu: [
-      { to: '/#dependencies', text: 'dependencies' },
       { to: '/#install', text: 'install' },
       { to: '/#caveats', text: 'caveats' },
       { to: '/#usage', text: 'usage' },
@@ -18,6 +19,8 @@ module.exports = {
           { to: '/#config-default', text: 'default' },
         ],
       },
+      { to: '/#dependencies', text: 'dependencies' },
+      { to: '/#source', text: 'source' },
     ],
   },
 }
