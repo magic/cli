@@ -16,7 +16,7 @@ module.exports = () => [
 
   h3({ id: 'install' }, 'install'),
   p('be in a nodejs project'),
-  Pre.View('npm i --save-dev @magic/cli'),
+  Pre('npm i --save-dev @magic/cli'),
 
   h3({ id: 'caveats' }, 'caveats'),
   p([
@@ -59,7 +59,7 @@ module.exports = () => [
   h3({ id: 'usage' }, 'Usage'),
   p('full api example'),
 
-  Pre.View(`
+  Pre(`
 // ./bin.js
 
 #!/usr/bin/env node
@@ -89,10 +89,10 @@ const { argv, env, commands } = cli({
   p(['using the ', Link({ to: '/#usage' }, 'cli file'), ' above']),
 
   p('then, in your terminal / bash'),
-  Pre.View('bin.js -f1 arg1 arg2 -f2'),
+  Pre('bin.js -f1 arg1 arg2 -f2'),
 
   p('resulting process.argv'),
-  Pre.View(`
+  Pre(`
 process.argv = [
   '/path/to/bin/node',
   '/path/to/bin.js',
@@ -103,11 +103,11 @@ process.argv = [
 ]`),
 
   p('returned javascript object'),
-  Pre.View("argv === { '--flag1': ['arg1', arg2], '--flag2': []}"),
+  Pre("argv === { '--flag1': ['arg1', arg2], '--flag2': []}"),
 
   h3({ id: 'commands' }, 'commands'),
   p('cli commands can be handled too.'),
-  Pre.View(`
+  Pre(`
 const cli = require('@magic/cli')
 
 const args = {
@@ -135,7 +135,7 @@ const argv = cli(args)
   ]),
 
   h4({ id: 'help-simple' }, 'simple help message'),
-  Pre.View(`
+  Pre(`
 const cli = require('@magic/cli')
 
 const args = {
@@ -173,7 +173,7 @@ dev: set NODE_ENV to development - aliases ["development"]
 
   h4({ id: 'help-detailed' }, 'detailed help message'),
   p('the help property will accept an object which maps to the args object'),
-  Pre.View(`
+  Pre(`
 const cli = require('@magic/cli')
 
 const args = {
@@ -221,7 +221,7 @@ dev: set process.NODE_ENV to development - aliases ["development"]
   p('there are some configuration parameters that can be passed to the cli function'),
 
   h4({ id: 'config-pure' }, 'pure'),
-  Pre.View(`
+  Pre(`
 const args = {
   pure: false,    // set to true to prevent changes to process.argv and process.env
   pureEnv: false, // set to true to prevent changes to process.env
@@ -232,7 +232,7 @@ cli(args)`),
 
   h3({ id: 'config-prepend-append' }, 'prepend/append'),
   p('process.argv values can be prepended and appended'),
-  Pre.View(`
+  Pre(`
 const cli = require('@magic/cli)
 
 const args = {
@@ -244,7 +244,7 @@ cli(args)`),
 
   h4({ id: 'config-default' }, 'default'),
   p('use this to set default process.argv key: value pairs that should be set if they are not'),
-  Pre.View(`
+  Pre(`
 const cli = require('@magic/cli')
 
 const args = {
@@ -277,7 +277,7 @@ const argv = cli(args)
   h2({ id: 'source' }, 'source'),
   p([
     'the source for this page is in the ',
-    Link({ to: 'https://github.com/magic/cli/tree/master/docsrc' }, 'docsrc directory'),
+    Link({ to: 'https://github.com/magic/cli/tree/master/example' }, 'example directory'),
     ' and gets built and published to github using ',
     Link({ to: 'https://github.com/magic/core' }, '@magic/core'),
   ]),
