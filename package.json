@@ -6,7 +6,7 @@
   "scripts": {
     "start": "t -p",
     "format": "f -w --exclude docs",
-    "test": "t --exclude docs docsrc config.js",
+    "test": "t --exclude docs example config.js",
     "build": "NODE_ENV=production magic build",
     "prod": "NODE_ENV=production magic build serve",
     "dev": "magic dev",
