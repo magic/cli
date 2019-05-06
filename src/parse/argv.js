@@ -87,11 +87,12 @@ const parseArgv = ({
       } else {
         argvAppend = [...argvAppend, ...v]
       }
-    })
+    }).filter(a => a)
   }
 
   if (!pure) {
-    process.argv = [argv1, argv2, ...argvAppend, ...argv, ...argvPrepend]
+    const args = [argv1, argv2, ...argvAppend, ...argv, ...argvPrepend].filter(a => !is.empty(a))
+    process.argv = args
   }
 
   return args
