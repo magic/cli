@@ -78,16 +78,18 @@ const parseArgv = ({
   if (!is.array(append)) {
     argvAppend.push(append)
   } else if (!is.empty(append)) {
-    Object.entries(append).forEach(([k, v]) => {
-      args[k] = v
+    Object.entries(append)
+      .forEach(([k, v]) => {
+        args[k] = v
 
-      argvAppend.push(k)
-      if (!is.array(v)) {
-        argvAppend.push(v)
-      } else {
-        argvAppend = [...argvAppend, ...v]
-      }
-    }).filter(a => a)
+        argvAppend.push(k)
+        if (!is.array(v)) {
+          argvAppend.push(v)
+        } else {
+          argvAppend = [...argvAppend, ...v]
+        }
+      })
+      .filter(a => a)
   }
 
   if (!pure) {
