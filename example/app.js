@@ -14,9 +14,9 @@ module.exports = {
         to: '/#config',
         text: 'configuration',
         items: [
-          { to: '/#config-pure', text: 'pure' },
-          { to: '/#config-prepend-append', text: 'append / prepend' },
-          { to: '/#config-default', text: 'default' },
+          { to: '-pure', text: 'pure' },
+          { to: '-prepend-append', text: 'append / prepend' },
+          { to: '-default', text: 'default' },
         ],
       },
       { to: '/#dependencies', text: 'dependencies' },
