@@ -23,7 +23,7 @@
     "declarative"
   ],
   "dependencies": {
-    "@magic/log": "0.0.3",
+    "@magic/log": "0.1.0",
     "@magic/types": "0.0.5"
   },
   "devDependencies": {
