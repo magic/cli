@@ -1,5 +1,3 @@
-const is = require('@magic/types')
-
 const parseArgv = ({
   options = [],
   prepend = {},
@@ -20,7 +18,7 @@ const parseArgv = ({
     if (arg.startsWith('-')) {
       let argsArg
       options.forEach(option => {
-        if (is.array(option)) {
+        if (Array.isArray(option)) {
           if (option.some(opt => opt === arg)) {
             argsArg = option[0]
           }
@@ -44,8 +42,9 @@ const parseArgv = ({
 
   const [argv1, argv2, ...argv] = process.argv
 
-  if (!is.empty(def)) {
-    Object.entries(def).forEach(([k, v]) => {
+  const entries = Object.entries(def)
+  if (entries.length) {
+    entries.forEach(([k, v]) => {
       if (is.empty(k)) {
         args[k] = v
 
@@ -59,14 +58,14 @@ const parseArgv = ({
   }
 
   let argvPrepend = []
-  if (!is.array(prepend)) {
+  if (!Array.isArray(prepend)) {
     argvPrepend.push(prepend)
-  } else if (!is.empty(prepend)) {
+  } else if (prepend.length) {
     Object.entries(prepend).forEach(([k, v]) => {
       args[k] = v
 
       argvPrepend.push(k)
-      if (!is.array(v)) {
+      if (!Array.isArray(v)) {
         argvPrepend.push(v)
       } else {
         argvPrepend = [...argvPrepend, ...v]
@@ -75,9 +74,9 @@ const parseArgv = ({
   }
 
   let argvAppend = []
-  if (!is.array(append)) {
+  if (!Array.isArray(append)) {
     argvAppend.push(append)
-  } else if (!is.empty(append)) {
+  } else if (append.length) {
     Object.entries(append)
       .forEach(([k, v]) => {
         args[k] = v
@@ -93,7 +92,7 @@ const parseArgv = ({
   }
 
   if (!pure) {
-    const args = [argv1, argv2, ...argvAppend, ...argv, ...argvPrepend].filter(a => !is.empty(a))
+    const args = [argv1, argv2, ...argvAppend, ...argv, ...argvPrepend].filter(a => a.length > 0)
     process.argv = args
   }
 

@@ -1,9 +1,8 @@
-const is = require('@magic/types')
 const log = require('@magic/log')
 
 const argToHelp = (arr, help = {}) =>
   arr.map(opt => {
-    if (is.string(opt)) {
+    if (typeof opt === 'string') {
       return opt
     } else {
       const [name, ...aliases] = opt

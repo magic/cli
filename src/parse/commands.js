@@ -1,15 +1,13 @@
-const is = require('@magic/types')
-
 const parseCommands = ({ commands = [], pure = false }) => {
   const cmds = {}
   commands.map((tasks = []) => {
     let key
     let idx = -1
-    if (is.string(tasks) && process.argv.includes(tasks)) {
+    if (typeof tasks === 'string' && process.argv.includes(tasks)) {
       idx = process.argv.indexOf(tasks)
       key = tasks
     } else {
-      if (!is.array(tasks)) {
+      if (!Array.isArray(tasks)) {
         tasks = [tasks]
       }
       const idxArray = tasks

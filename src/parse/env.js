@@ -1,12 +1,10 @@
-const is = require('@magic/types')
-
 const parseEnv = ({ env = [], pure = false }) => {
   const environment = []
 
   // set env depending on env switches
   env
     .filter(([argv]) => {
-      if (!is.array(argv)) {
+      if (!Array.isArray(argv)) {
         argv = [argv]
       }
       return argv.some(a => process.argv.includes(a))

@@ -1,5 +1,4 @@
 const log = require('@magic/log')
-const is = require('@magic/types')
 
 const envToHelp = require('./envToHelp')
 const argToHelp = require('./argToHelp')
@@ -7,10 +6,10 @@ const pendToHelp = require('./pendToHelp')
 const defaultToHelp = require('./defaultToHelp')
 
 const maybeHelp = ({ args, parsed }) => {
-  const hasArgs = Object.values(parsed).some(a => !is.empty(a))
+  const hasArgs = Object.values(parsed).some(a => Object.entries(a).length)
   const flags = ['help', 'h', '-h', '--h', '--help']
   const showHelp = !hasArgs || flags.some(a => process.argv.includes(a))
-  const hasCommands = !is.empty(args.commands)
+  const hasCommands = args.commands && Object.entries(args.commands).length > 0
 
   if (!showHelp || !hasCommands) {
     return false
@@ -32,7 +31,7 @@ const maybeHelp = ({ args, parsed }) => {
   const envHelp = envToHelp(env, help.env)
 
   const name = help.name || '@magic/cli wrapped cli.'
-  const header = is.string(help) ? help : help.text
+  const header = typeof help === 'string' ? help : help.text
 
   const prependHelp = pendToHelp(prepend, help.prepend)
   const appendHelp = pendToHelp(append, help.append)
