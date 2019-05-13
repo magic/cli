@@ -24,7 +24,7 @@
   ],
   "dependencies": {
     "@magic/log": "0.0.3",
-    "@magic/types": "0.0.5"
+    "@magic/types": "0.1.0"
   },
   "devDependencies": {
     "@magic-modules/git-badges": "github:magic-modules/git-badges",
