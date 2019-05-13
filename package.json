@@ -23,7 +23,7 @@
     "declarative"
   ],
   "dependencies": {
-    "@magic/log": "0.0.3"
+    "@magic/log": "0.1.0-cjs"
   },
   "devDependencies": {
     "@magic-modules/git-badges": "github:magic-modules/git-badges",
