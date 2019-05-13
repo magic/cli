@@ -1,6 +1,6 @@
 {
   "name": "@magic/cli",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "homepage": "https://magic.github.io/cli",
   "description": "declarative command line interfaces with aliasing, commands and environment sanitization",
   "scripts": {
@@ -12,7 +12,7 @@
     "dev": "magic dev",
     "calls": "calls"
   },
-  "main": "src/index.js",
+  "main": "src/index.mjs",
   "files": [
     "src"
   ],
@@ -23,15 +23,14 @@
     "declarative"
   ],
   "dependencies": {
-    "@magic/log": "0.0.3",
-    "@magic/types": "0.0.5"
+    "@magic/log": "0.0.3"
   },
   "devDependencies": {
     "@magic-modules/git-badges": "github:magic-modules/git-badges",
     "@magic-modules/pre": "github:magic-modules/pre",
     "@magic-themes/docs": "github:magic-themes/docs",
     "@magic/core": "github:magic/core",
-    "@magic/test": "0.0.12"
+    "@magic/test": "0.1.0-cjs"
   },
   "author": "Wizards & Witches",
   "license": "AGPL-3.0",
@@ -39,34 +38,6 @@
     {
       "name": "jascha ehrenreich",
       "github": "jaeh"
-    },
-    {
-      "name": "philipp tiefenbacher",
-      "github": "wizard23"
-    },
-    {
-      "name": "tom peak",
-      "github": "tompeak"
-    },
-    {
-      "name": "phileas lebada",
-      "github": "norpol"
-    },
-    {
-      "name": "litto",
-      "github": "mslitto"
-    },
-    {
-      "name": "daniel safar",
-      "github": "n1c3"
-    },
-    {
-      "name": "jay vaughan",
-      "github": "seclorum"
-    },
-    {
-      "name": "alexander weiss",
-      "github": "ylem235"
     }
   ]
 }
