@@ -1,6 +1,6 @@
-const log = require('@magic/log')
+import log from '@magic/log'
 
-const envToHelp = env =>
+export const envToHelp = env =>
   env
     .map(e => {
       const [cmds, name, value] = e
@@ -11,5 +11,3 @@ const envToHelp = env =>
       return `${swc}: set process.${name} to ${value} - alias: ["${aliasString}"]`
     })
     .join('\n')
-
-module.exports = envToHelp

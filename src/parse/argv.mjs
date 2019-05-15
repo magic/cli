@@ -1,4 +1,4 @@
-const parseArgv = ({
+export const parseArgv = ({
   options = [],
   prepend = {},
   append = {},
@@ -98,5 +98,3 @@ const parseArgv = ({
 
   return args
 }
-
-module.exports = parseArgv

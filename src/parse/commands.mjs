@@ -1,4 +1,4 @@
-const parseCommands = ({ commands = [], pure = false }) => {
+export const parseCommands = ({ commands = [], pure = false }) => {
   const cmds = {}
   commands.map((tasks = []) => {
     let key
@@ -26,5 +26,3 @@ const parseCommands = ({ commands = [], pure = false }) => {
 
   return cmds
 }
-
-module.exports = parseCommands

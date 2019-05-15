@@ -1,11 +1,9 @@
-const log = require('@magic/log')
+import log from '@magic/log'
 
-const envToHelp = require('./envToHelp')
-const argToHelp = require('./argToHelp')
-const pendToHelp = require('./pendToHelp')
-const defaultToHelp = require('./defaultToHelp')
+import { envToHelp } from './envToHelp.mjs'
+import { argToHelp } from './argToHelp.mjs'
 
-const maybeHelp = ({ args, parsed }) => {
+export const maybeHelp = ({ args, parsed }) => {
   const hasArgs = Object.values(parsed).some(a => Object.entries(a).length)
   const flags = ['help', 'h', '-h', '--h', '--help']
   const showHelp = !hasArgs || flags.some(a => process.argv.includes(a))
@@ -33,24 +31,19 @@ const maybeHelp = ({ args, parsed }) => {
   const name = help.name || '@magic/cli wrapped cli.'
   const header = typeof help === 'string' ? help : help.text
 
-  const prependHelp = pendToHelp(prepend, help.prepend)
-  const appendHelp = pendToHelp(append, help.append)
-  const defaultHelp = defaultToHelp(def, help.default)
-
   const helpArray = [
     log.paint('green', name),
     '\n',
     header && `\n${log.paint('grey', header)}\n\n`,
-    commands.length && `${log.paint('grey', 'commands')}:\n${commandHelp}\n`,
-    options.length && `${log.paint('grey', 'flags')}:\n${optionHelp}\n`,
-    env.length && `${log.paint('grey', 'environment switches')}:\n${envHelp}\n`,
-    prependHelp,
-    appendHelp,
-    defaultHelp,
+    commands.length && `${log.paint('grey', 'commands')}:\n${commandHelp}\n\n`,
+    options.length && `${log.paint('grey', 'flags')}:\n${optionHelp}\n\n`,
+    env.length && `${log.paint('grey', 'environment switches')}:\n${envHelp}\n\n`,
+    // prependHelp,
+    // appendHelp,
+    // defaultHelp,
+    'examples:\n',
     help.example,
   ]
 
   return helpArray.filter(a => a).join('')
 }
-
-module.exports = maybeHelp

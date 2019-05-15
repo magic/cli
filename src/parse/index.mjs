@@ -1,8 +1,8 @@
-const parseEnv = require('./env')
-const parseArgv = require('./argv')
-const parseCommands = require('./commands')
+import { parseEnv } from './env.mjs'
+import { parseArgv } from './argv.mjs'
+import { parseCommands } from './commands.mjs'
 
-const parse = args => {
+export const parse = args => {
   const { pure = false } = args
   const { pureEnv = pure, pureArgv = pure, pureCommands = pure } = args
 
@@ -19,5 +19,3 @@ const parse = args => {
     commands: cmds,
   }
 }
-
-module.exports = parse

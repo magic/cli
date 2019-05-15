@@ -1,4 +1,4 @@
-const parseEnv = ({ env = [], pure = false }) => {
+export const parseEnv = ({ env = [], pure = false }) => {
   const environment = []
 
   // set env depending on env switches
@@ -18,5 +18,3 @@ const parseEnv = ({ env = [], pure = false }) => {
 
   return environment
 }
-
-module.exports = parseEnv
