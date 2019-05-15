@@ -1,3 +1,5 @@
+import is from '@magic/types'
+
 export const parseArgv = ({
   options = [],
   prepend = {},
@@ -18,7 +20,7 @@ export const parseArgv = ({
     if (arg.startsWith('-')) {
       let argsArg
       options.forEach(option => {
-        if (Array.isArray(option)) {
+        if (is.array(option)) {
           if (option.some(opt => opt === arg)) {
             argsArg = option[0]
           }

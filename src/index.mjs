@@ -1,4 +1,4 @@
-import { exec as xc } from 'child_process'
+import child_process from 'child_process'
 import log from '@magic/log'
 
 import { maybeHelp } from './help/index.mjs'
@@ -18,7 +18,7 @@ export const cli = (args = {}) => {
 export const exec = (cmd, args = []) => {
   args = args.join(' ')
 
-  const res = xc(`${cmd} ${args}`)
+  const res = child_process.spawn(cmd, args, { stdio: inherit, env: process.env })
 
   res.stdout.pipe(process.stdout)
   res.stderr.pipe(process.stderr)
