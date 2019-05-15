@@ -21,7 +21,6 @@ const spawnCli = (args = [], cmd = 'node') => {
 
   const opts = {
     stdio: 'inherit',
-    env: process.env,
   }
 
   if (!arg) {
