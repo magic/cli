@@ -1,7 +1,7 @@
-const { is } = require('@magic/test')
-const cli = require('../src')
+import { is } from '@magic/test'
+import { cli } from '../src/index.mjs'
 
-module.exports = [
+export default [
   { fn: () => cli, expect: is.function, info: 'cli exports a function' },
   { fn: () => cli.spawn, expect: is.function, info: 'cli.spawn exists' },
   { fn: () => cli.exec, expect: is.function, info: 'cli.exec exists' },
