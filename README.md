@@ -74,11 +74,24 @@ those issues might get addressed in the future.
 
 ### <a name="usage"></a>Usage
 full api:
+
+first we have to define the cli.mjs file in a commonjs file:
 ```javascript
 // ./bin.js
-
 #!/usr/bin/env node
-const cli = require('@magic/cli')
+const path = require('path')
+const spawn = require('@magic/cli')
+
+const cmd = path.join(process.cwd(), 'path', 'to', 'your', 'bin.mjs')
+const args = ['--array', 'of', 'flags', cmd]
+const executable = 'node' // node is default value
+spawn(args, [executable])
+```
+
+then we can write the bin.mjs file:
+```javascript
+// ./bin.mjs
+import { cli } from '@magic/cli/src/index.mjs'
 
 const { argv, env, commands } = cli({
   commands: [
@@ -100,7 +113,7 @@ const { argv, env, commands } = cli({
 ```
 
 ### <a name="argv"></a>options / argv
-argv mappings will handle options and option aliases
+argv mappings handle options and option aliases
 
 using the cli file above
 
@@ -149,8 +162,7 @@ const argv = cli(args)
 ```
 
 ### <a name="help"></a>help output
-at the moment, @magic/cli will just show a simple message that no help text was set.
-in the future, we will parse your configuration and create a help text based on it.
+@magic/cli will parse your configuration and create a help text based on it.
 
 #### <a name="help-simple"></a>simple help message
 ```javascript
@@ -160,8 +172,6 @@ const args = {
   commands: [['magic', 'm']],
   options: [['--spell', '-s']],
   env: [[['dev', 'development'], 'NODE_ENV', 'development']],
-  prepend: 'prepend',
-  append: 'append',
   help: 'custom help text',
 }
 
@@ -183,7 +193,6 @@ magic - aliases: ["m"]
 
 possible command line flags:
 --spell - aliases: ["-s"]
-
 
 environment switches:
 dev: set NODE_ENV to development - aliases ["development"]
