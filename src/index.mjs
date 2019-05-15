@@ -29,4 +29,3 @@ export const exec = (cmd, args = []) => {
 export const spawn = exec
 
 cli.spawn = cli.exec = exec
-
