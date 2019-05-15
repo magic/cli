@@ -16,12 +16,12 @@ export const cli = (args = {}) => {
 }
 
 export const exec = (cmd, args = []) => {
-  args = args.join(' ')
-
-  const res = child_process.spawn(cmd, args, { stdio: inherit, env: process.env })
-
-  res.stdout.pipe(process.stdout)
-  res.stderr.pipe(process.stderr)
+  const opts = {
+    cwd: process.cwd(),
+    env: process.env,
+    stdio: 'inherit',
+  }
+  const res = child_process.spawn(cmd, args, opts)
 
   return res
 }
