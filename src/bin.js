@@ -1,12 +1,11 @@
-const { exec, spawn } = require('child_process')
+const { spawn } = require('child_process')
 
-const spawnCli = file => {
+const spawnCli = (cmd = 'node', args = []) => {
   const [_, _1, ...execArgv] = process.argv
 
-  const argv = ['--experimental-modules', '--experimental-json-modules', file, ...execArgv]
+  const arg = [...args, ...execArgv]
 
-  const cmd = 'node'
-  spawn(cmd, argv, { stdio: 'inherit', env: process.env })
+  spawn(cmd, arg, { stdio: 'inherit', env: process.env })
 }
 
 module.exports = spawnCli
