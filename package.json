@@ -25,14 +25,14 @@
   ],
   "dependencies": {
     "@magic/log": "0.1.0",
-    "@magic/types": "0.1.1"
+    "@magic/types": "0.1.2"
   },
   "devDependencies": {
     "@magic-modules/git-badges": "github:magic-modules/git-badges",
     "@magic-modules/pre": "github:magic-modules/pre",
     "@magic-themes/docs": "github:magic-themes/docs",
     "@magic/core": "github:magic/core",
-    "@magic/test": "0.1.1"
+    "@magic/test": "0.1.4"
   },
   "author": "Wizards & Witches",
   "license": "AGPL-3.0",
