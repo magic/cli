@@ -1,27 +1,36 @@
 import is from '@magic/types'
 import log from '@magic/log'
 
-export const argToHelp = (arr, help = {}) =>
-  arr
-    .map(opt => {
-      let name = opt
-      let aliases = []
-      if (is.array(name)) {
-        const [n, ...al] = opt
-        name = n
-        aliases = al
-      }
+import { findLongestString } from './findLongestString.mjs'
 
-      let res = log.paint('yellow', name)
+export const argToHelp = (arr, help = {}) => {
+  const longest = findLongestString(arr)
 
-      if (help[name]) {
-        res += ` - ${help[name]}`
-      }
+  return arr.map(opt => {
+    let name = opt
+    let aliases = []
+    if (is.array(name)) {
+      const [n, ...al] = opt
+      name = n
+      aliases = al
+    }
 
-      if (aliases.length) {
-        res += ` - alias: ["${aliases.map(a => log.paint('yellow', a)).join('", "')}"]`
-      }
+    let res = log.paint('yellow', name)
 
-      return res
-    })
-    .join('\n')
+    const dist = longest.length - name.length
+    const placeholder = Array(dist + 1).join(' ')
+
+    res += placeholder
+
+    if (help[name]) {
+      res += ` - ${help[name]}`
+    }
+
+    if (aliases.length) {
+      res += ` - alias: ["${aliases.map(a => log.paint('yellow', a)).join('", "')}"]`
+    }
+
+    return res
+  })
+  .join('\n')
+}

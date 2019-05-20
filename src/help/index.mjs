@@ -18,9 +18,6 @@ export const maybeHelp = ({ args, parsed }) => {
     commands = [],
     options = [],
     env = [],
-    default: def = [],
-    prepend = [],
-    append = [],
     help = '',
   } = args
 
