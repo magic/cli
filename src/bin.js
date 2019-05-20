@@ -27,7 +27,17 @@ const spawnCli = (args = [], cmd = 'node') => {
     arg = []
   }
 
-  spawn(cmd, arg, opts)
+
+  const isWin = process.platform === 'win32'
+  if (isWin) {
+    opts.shell = true
+  }
+
+  const sp = spawn(cmd, arg, opts)
+
+  sp.on('close', () => {
+    process.exit(0)
+  })
 }
 
 module.exports = spawnCli
