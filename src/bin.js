@@ -35,8 +35,8 @@ const spawnCli = (args = [], cmd = 'node') => {
 
   const sp = spawn(cmd, arg, opts)
 
-  sp.on('close', () => {
-    process.exit(0)
+  sp.on('close', code => {
+    process.exit(code)
   })
 }
 
