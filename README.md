@@ -298,3 +298,8 @@ const argv = cli(args)
   },
 }
 ```
+
+### Changelog
+
+#### 0.0.3
+cli's should now correctly process.exit(1) on error of the spawned process.

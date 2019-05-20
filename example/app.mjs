@@ -18,7 +18,6 @@ export const state = {
         { to: '-default', text: 'default' },
       ],
     },
-    { to: '/#dependencies', text: 'dependencies' },
     { to: '/#source', text: 'source' },
   ],
 }
