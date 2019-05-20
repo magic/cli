@@ -1,4 +1,4 @@
-module.exports = () => [
+export const View = () => [
   h2('@magic/cli'),
   p([
     'declarative cli sanitization and execution for ',
