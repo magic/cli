@@ -303,3 +303,6 @@ const argv = cli(args)
 
 #### 0.0.3
 cli's should now correctly process.exit(1) on error of the spawned process.
+
+#### 0.0.4
+console help output now aligns nicely

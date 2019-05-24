@@ -281,6 +281,9 @@ const argv = cli(args)
   h3('0.0.3'),
   p('error if spawned process errors. (process.exit(1)'),
 
+  h3('0.0.4'),
+  p('console output now aligns'),
+
   h2({ id: 'source' }, 'source'),
   p([
     'the source for this page is in the ',
