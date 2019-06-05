@@ -306,3 +306,6 @@ cli's should now correctly process.exit(1) on error of the spawned process.
 
 #### 0.0.4
 console help output now aligns nicely
+
+#### 0.0.5
+node 12.4.0 does not have --experimental-node-modules flag.

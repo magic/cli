@@ -284,6 +284,9 @@ const argv = cli(args)
   h3('0.0.4'),
   p('console output now aligns'),
 
+  h3('0.0.5'),
+  p('node 12.4.0 does not have --experimental-node-modules flag.'),
+
   h2({ id: 'source' }, 'source'),
   p([
     'the source for this page is in the ',
