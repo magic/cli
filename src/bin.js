@@ -24,6 +24,9 @@ const spawnCli = (args = [], cmd = 'node') => {
     if (!arg.includes('--experimental-modules')) {
       arg = ['--experimental-modules', ...arg]
     }
+    if (!arg.includes('--es-module-specifier-resolution')) {
+      arg = ['--es-module-specifier-resolution', 'node', ...arg]
+    }
   }
 
   const opts = {
