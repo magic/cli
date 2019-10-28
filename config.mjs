@@ -1,5 +1,5 @@
 export default {
-  ROOT: 'example',
+  ROOT: 'docsrc',
   PUBLIC: 'docs',
   THEME: 'docs',
   WEB_ROOT: '/cli/',
