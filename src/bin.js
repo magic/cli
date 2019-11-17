@@ -10,15 +10,13 @@ const spawnCli = (args = [], cmd = 'node') => {
   let arg = [...args, ...execArgv]
 
   if (cmd === 'node') {
-    // node 12.4.0 does not use that flag anymore
+    // node 12.4.0+ does not use that flag anymore
     const [major, minor, patch] = process.version.substring(1)
       .split('.')
       .map(n => parseInt(n))
 
-    if (major === 12 && minor < 4) {
-      if (!arg.includes('--experimental-json-modules')) {
-        arg = ['--experimental-json-modules', ...arg]
-      }
+    if (!arg.includes('--experimental-json-modules')) {
+      arg = ['--experimental-json-modules', ...arg]
     }
 
     if (!arg.includes('--experimental-modules')) {
