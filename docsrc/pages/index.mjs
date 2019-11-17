@@ -287,6 +287,10 @@ const argv = cli(args)
   h3('0.0.5'),
   p('node 12.4.0 does not have --experimental-node-modules flag.'),
 
+
+  h3('0.0.6'),
+  p('readd --experimental-node-modules flag for 13.1.0+'),
+
   h2({ id: 'source' }, 'source'),
   p([
     'the source for this page is in the ',
