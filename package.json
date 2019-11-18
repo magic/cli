@@ -12,6 +12,9 @@
     "dev": "magic dev",
     "calls": "calls"
   },
+  "engine": {
+    "node": ">=12.13.0"
+  },
   "main": "src/bin.js",
   "module": "src/index.mjs",
   "files": [
