@@ -312,3 +312,7 @@ node 12.4.0 does not have --experimental-node-modules fladg.
 
 #### 0.0.6
 readd --experimental-node-modules flag for 13.1.0+
+
+#### 0.0.7
+update dependencies
+bump node version
