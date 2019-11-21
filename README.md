@@ -102,9 +102,9 @@ const { argv, env, commands } = cli({
     ['--flag1', '-f1'],
     ['--flag2', '-f2'],
   ],
-  default: [
-    ['--default-key', 'default-value'],
-  ],
+  default: {
+    '--default-key': 'default-value',
+  },
   env: [[['--production', '--prod', '--p', '-p'], 'NODE_ENV', 'production']],
   pure: true, // do neither change process.argv nor process.env
   pureArgv: true, // do not change process.argv
@@ -284,9 +284,9 @@ const args = {
   options: [
     ['--default-key'],
   ],
-  default: [
-    ['--default-key', 'default-value']
-  ],
+  default: {
+    '--default-key': 'default-value',
+  },
 }
 
 const argv = cli(args)
