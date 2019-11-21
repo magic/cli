@@ -45,9 +45,10 @@ export const parseArgv = ({
   const [argv1, argv2, ...argv] = process.argv
 
   const entries = Object.entries(def)
+
   if (entries.length) {
     entries.forEach(([k, v]) => {
-      if (is.empty(k)) {
+      if (is.empty(args[k])) {
         args[k] = v
 
         argv.push(k)
