@@ -20,6 +20,10 @@
   "files": [
     "src"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/magic/cli.git"
+  },
   "keywords": [
     "magic",
     "cli",
