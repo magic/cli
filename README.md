@@ -21,8 +21,8 @@ also handles commands and environment for you
 
 [npm-image]: https://img.shields.io/npm/v/@magic/cli.svg
 [npm-url]: https://www.npmjs.com/package/@magic/cli
-[travis-image]: https://api.travis-ci.org/magic/cli.svg?branch=master
-[travis-url]: https://travis-ci.org/magic/cli
+[travis-image]: https://api.travis-ci.com/magic/cli.svg?branch=master
+[travis-url]: https://travis-ci.com/magic/cli
 [appveyor-image]: https://img.shields.io/appveyor/ci/magic/cli/master.svg
 [appveyor-url]: https://ci.appveyor.com/project/magic/cli/branch/master
 [coveralls-image]: https://coveralls.io/repos/github/magic/cli/badge.svg
