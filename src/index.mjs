@@ -21,9 +21,7 @@ export const exec = (cmd, args = []) => {
     env: process.env,
     stdio: 'inherit',
   }
-  const res = child_process.spawn(cmd, args, opts)
-
-  return res
+  return child_process.spawn(cmd, args, opts)
 }
 
 export const spawn = exec
