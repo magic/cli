@@ -14,12 +14,7 @@ export const maybeHelp = ({ args, parsed }) => {
   }
 
   // add help text inspection here
-  const {
-    commands = [],
-    options = [],
-    env = [],
-    help = '',
-  } = args
+  const { commands = [], options = [], env = [], help = '' } = args
 
   const commandHelp = argToHelp(commands, help.commands)
   const optionHelp = argToHelp(options, help.options)

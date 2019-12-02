@@ -11,7 +11,8 @@ const spawnCli = (args = [], cmd = 'node') => {
 
   if (cmd === 'node') {
     // node 12.4.0+ does not use that flag anymore
-    const [major, minor, patch] = process.version.substring(1)
+    const [major, minor, patch] = process.version
+      .substring(1)
       .split('.')
       .map(n => parseInt(n))
 
@@ -34,7 +35,6 @@ const spawnCli = (args = [], cmd = 'node') => {
   if (!arg) {
     arg = []
   }
-
 
   const isWin = process.platform === 'win32'
   if (isWin) {

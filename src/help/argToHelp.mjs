@@ -6,31 +6,32 @@ import { findLongestString } from './findLongestString.mjs'
 export const argToHelp = (arr, help = {}) => {
   const longest = findLongestString(arr)
 
-  return arr.map(opt => {
-    let name = opt
-    let aliases = []
-    if (is.array(name)) {
-      const [n, ...al] = opt
-      name = n
-      aliases = al
-    }
+  return arr
+    .map(opt => {
+      let name = opt
+      let aliases = []
+      if (is.array(name)) {
+        const [n, ...al] = opt
+        name = n
+        aliases = al
+      }
 
-    let res = log.paint('yellow', name)
+      let res = log.paint('yellow', name)
 
-    const dist = longest.length - name.length
-    const placeholder = Array(dist + 1).join(' ')
+      const dist = longest.length - name.length
+      const placeholder = Array(dist + 1).join(' ')
 
-    res += placeholder
+      res += placeholder
 
-    if (help[name]) {
-      res += ` - ${help[name]}`
-    }
+      if (help[name]) {
+        res += ` - ${help[name]}`
+      }
 
-    if (aliases.length) {
-      res += ` - alias: ["${aliases.map(a => log.paint('yellow', a)).join('", "')}"]`
-    }
+      if (aliases.length) {
+        res += ` - alias: ["${aliases.map(a => log.paint('yellow', a)).join('", "')}"]`
+      }
 
-    return res
-  })
-  .join('\n')
+      return res
+    })
+    .join('\n')
 }
