@@ -6,10 +6,10 @@ import { argToHelp } from './argToHelp.mjs'
 export const maybeHelp = ({ args, parsed }) => {
   const hasArgs = Object.values(parsed).some(a => Object.entries(a).length)
   const flags = ['help', 'h', '-h', '--h', '--help']
-  const showHelp = !hasArgs || flags.some(a => process.argv.includes(a))
   const hasCommands = args.commands && Object.entries(args.commands).length > 0
+  const showHelp = hasCommands && Object.keys(parsed.commands).length === 0
 
-  if (!showHelp || !hasCommands) {
+  if (!showHelp) {
     return false
   }
 
