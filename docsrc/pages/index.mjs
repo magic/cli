@@ -295,6 +295,9 @@ const argv = cli(args)
   p('bump node version'),
   p('update @magic/log'),
 
+  h3('0.0.8'),
+  p('help is shown if commands exist but none are given'),
+
   h2({ id: 'source' }, 'source'),
   p([
     'the source for this page is in the ',
