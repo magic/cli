@@ -60,22 +60,23 @@ npm i --save-dev @magic/cli
 there are some quirks that need some careful consideration when designing a cli api
 depending on your requirements, these caveats should seldomly apply.
 
-1.
-  ##### last argument
-  * if your last argument does not have a corresponding flag,
-    it will still be assigned to the last flag prior to it.
-2.
-  * if one of your options gets an argument that is equal to a command,
-    this command will be executed
-3.
-  * cli arguments that start with a - will always be treated as flags, not values.
+##### last argument
+if your last argument does not have a corresponding flag,
+it will still be assigned to the last flag prior to it.
 
-those issues might get addressed in the future.
+##### command name overload
+if one of your options gets an argument that is equal to a command,
+this command will be executed
+
+##### flag name overload
+cli arguments that start with a - will always be treated as flags, not values.
+
+*those issues might get addressed in the future.*
 
 ### <a name="usage"></a>Usage
 full api:
 
-first we have to define the cli.mjs file in a commonjs file:
+first we have to define the cli.js file (in a commonjs file!):
 ```javascript
 // ./bin.js
 #!/usr/bin/env node
@@ -134,7 +135,7 @@ process.argv = [
 
 resulting javascript object
 ```javascript
-argv === { '--flag1': ['arg1', arg2], '--flag2': []}
+{ '--flag1': ['arg1', arg2], '--flag2': []}
 ```
 
 ### <a name="commands"><a>commands
