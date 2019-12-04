@@ -320,3 +320,9 @@ bump node version
 
 #### 0.0.8
 help is shown if cli has commands but none are given
+
+#### 0.0.9
+update dependencies
+
+#### 0.0.10
+update dependencies

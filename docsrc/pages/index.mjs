@@ -297,6 +297,12 @@ const argv = cli(args)
   h3('0.0.8'),
   p('help is shown if commands exist but none are given'),
 
+  h3('0.0.9'),
+  p('update dependencies'),
+
+  h3('0.0.10'),
+  p('update dependencies'),
+
   h2({ id: 'source' }, 'source'),
   p([
     'the source for this page is in the ',
