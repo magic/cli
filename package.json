@@ -32,7 +32,7 @@
   ],
   "dependencies": {
     "@magic/log": "0.1.2",
-    "@magic/types": "0.1.2"
+    "@magic/types": "0.1.4"
   },
   "devDependencies": {
     "@magic-modules/gdpr": "0.0.11",
