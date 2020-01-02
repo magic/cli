@@ -310,6 +310,4 @@ const argv = cli(args)
     ' and gets built and published to github using ',
     Link({ to: 'https://github.com/magic/core' }, '@magic/core'),
   ]),
-
-  LightSwitch(state),
 ]
