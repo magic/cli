@@ -320,5 +320,6 @@ update dependencies
 #### 0.0.11
 * parsed.args added. is copy of argv, but using camelCased keys without leading --.
 * no commonjs fallback, ecmascript modules all the way
+* parsed does not return aliases. env, argv, args, commands. thats it.
 
 #### 0.0.12 - unreleased
