@@ -326,3 +326,9 @@ update dependencies
 
 #### 0.0.10
 update dependencies
+
+#### 0.0.11 - unreleased
+* parsed.args added. is copy of argv, but using camelCased keys without leading --.
+* no commonjs fallback, node 13.5.0 and ecmascript modules all the way
+
+#### 0.0.12 - unreleased
