@@ -6,6 +6,7 @@ import { parse } from './parse/index.mjs'
 
 export const cli = (args = {}) => {
   const parsed = parse(args)
+
   const helpText = maybeHelp({ args, parsed })
   if (helpText) {
     log(helpText)
@@ -27,3 +28,5 @@ export const exec = (cmd, args = []) => {
 export const spawn = exec
 
 cli.spawn = cli.exec = exec
+
+export default cli
