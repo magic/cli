@@ -7,15 +7,12 @@ export const parse = ({ pure = false, ...props }) => {
 
   const env = parseEnv({ ...props, pure: pureEnv })
   const { argv, args } = parseArgv({ ...props, pure: pureArgv })
-  const cmds = parseCommands({ ...args, pure: pureCommands })
+  const commands = parseCommands({ ...props, pure: pureCommands })
 
   return {
     env,
-    environment: env,
     argv,
-    options: argv,
     args,
-    cmds,
-    commands: cmds,
+    commands,
   }
 }
