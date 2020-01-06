@@ -13,10 +13,9 @@
     "calls": "calls"
   },
   "engine": {
-    "node": ">=12.13.0"
+    "node": ">=13.5.0"
   },
-  "main": "src/bin.js",
-  "module": "src/index.mjs",
+  "main": "src/index.mjs",
   "files": [
     "src"
   ],
