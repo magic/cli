@@ -1,4 +1,5 @@
 import is from '@magic/types'
+import cases from '@magic/cases'
 
 export const parseArgv = ({
   options = [],
@@ -8,7 +9,7 @@ export const parseArgv = ({
   pure = false,
 }) => {
   let lastArg
-  const args = {}
+  const argv = {}
   // map over argv, find arguments and values.
   // arguments are all strings starting with a -,
   // values are all strings between strings starting with a -.
@@ -18,44 +19,44 @@ export const parseArgv = ({
     }
 
     if (arg.startsWith('-')) {
-      let argsArg
+      let argvArg
       options.forEach(option => {
         if (is.array(option)) {
           if (option.some(opt => opt === arg)) {
-            argsArg = option[0]
+            argvArg = option[0]
           }
         } else if (option === arg) {
-          argsArg = option
+          argvArg = option
         }
       })
-      if (argsArg) {
-        lastArg = argsArg
-        args[lastArg] = []
+      if (argvArg) {
+        lastArg = argvArg
+        argv[lastArg] = []
         if (!pure) {
           process.argv[i] = lastArg
         }
       }
     } else {
       if (lastArg) {
-        args[lastArg].push(arg)
+        argv[lastArg].push(arg)
       }
     }
   })
 
-  const [argv1, argv2, ...argv] = process.argv
+  const [argv1, argv2, ...argvRest] = process.argv
 
   const entries = Object.entries(def)
 
   if (entries.length) {
     entries.forEach(([k, v]) => {
-      if (is.empty(args[k])) {
-        args[k] = v
+      if (is.empty(argv[k])) {
+        argv[k] = v
 
-        argv.push(k)
+        argvRest.push(k)
         if (!is.array(v)) {
           v = [v]
         }
-        v.forEach(vv => argv.push(vv))
+        v.forEach(vv => argvRest.push(vv))
       }
     })
   }
@@ -65,7 +66,7 @@ export const parseArgv = ({
     argvPrepend.push(prepend)
   } else if (prepend.length) {
     Object.entries(prepend).forEach(([k, v]) => {
-      args[k] = v
+      argv[k] = v
 
       argvPrepend.push(k)
       if (!Array.isArray(v)) {
@@ -82,7 +83,7 @@ export const parseArgv = ({
   } else if (append.length) {
     Object.entries(append)
       .forEach(([k, v]) => {
-        args[k] = v
+        argv[k] = v
 
         argvAppend.push(k)
         if (!is.array(v)) {
@@ -95,9 +96,21 @@ export const parseArgv = ({
   }
 
   if (!pure) {
-    const args = [argv1, argv2, ...argvAppend, ...argv, ...argvPrepend].filter(a => a.length > 0)
-    process.argv = args
+    const argvArgs = [argv1, argv2, ...argvAppend, ...argvRest, ...argvPrepend].filter(
+      a => a.length > 0,
+    )
+
+    process.argv = argvArgs
   }
 
-  return args
+  const args = {}
+
+  Object.entries(argv).map(([k, v]) => {
+    args[cases.camel(k)] = v
+  })
+
+  return {
+    argv,
+    args,
+  }
 }
