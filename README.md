@@ -332,5 +332,8 @@ update deps
 #### 0.0.14
 --help works for cli scripts without commands too
 
-#### 0.0.15 - unreleased
+#### 0.0.15
+cli will always provide --help and -h flags to show help
+
+#### 0.0.16 - unreleased
 ...
