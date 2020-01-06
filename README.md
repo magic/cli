@@ -329,5 +329,8 @@ add @magic/cases dependency
 #### 0.0.13
 update deps
 
-#### 0.0.14 - unreleased
+#### 0.0.14
+--help works for cli scripts without commands too
+
+#### 0.0.15 - unreleased
 ...
