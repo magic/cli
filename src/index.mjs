@@ -5,6 +5,11 @@ import { maybeHelp } from './help/index.mjs'
 import { parse } from './parse/index.mjs'
 
 export const cli = (args = {}) => {
+  let hasHelpOption = args.options.some(option => option.includes('--help'))
+  if (!hasHelpOption) {
+    args.options.push(['--help', '-h'])
+  }
+
   const parsed = parse(args)
 
   const helpText = maybeHelp({ args, parsed })
