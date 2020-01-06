@@ -322,4 +322,8 @@ update dependencies
 * no commonjs fallback, ecmascript modules all the way
 * parsed does not return aliases. env, argv, args, commands. thats it.
 
-#### 0.0.12 - unreleased
+#### 0.0.12
+add @magic/cases dependency
+
+#### 0.0.13 - unreleased
+...
