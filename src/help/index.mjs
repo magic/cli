@@ -9,7 +9,9 @@ export const maybeHelp = ({ args, parsed }) => {
   const hasCommands = args.commands && Object.entries(args.commands).length > 0
   const showHelp = hasCommands && Object.keys(parsed.commands).length === 0
 
-  if (!showHelp) {
+  const helpRequested = parsed.args.help
+
+  if (!showHelp && !helpRequested) {
     return false
   }
 
