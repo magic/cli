@@ -12,7 +12,7 @@ export const cli = (args = {}) => {
 
   const parsed = parse(args)
 
-  const helpText = maybeHelp({ args, parsed })
+  const helpText = maybeHelp({ ...args, parsed })
 
   if (helpText) {
     log(helpText)
