@@ -1,6 +1,7 @@
 import is from '@magic/types'
 
-export const parseRequired = ({ required, options }) => {
+export const parseRequired = ({ props, parsed }) => {
+  const { options, required } = props
 
   if (is.empty(required)) {
     return []
@@ -8,8 +9,8 @@ export const parseRequired = ({ required, options }) => {
 
   const errors = []
 
-  Object.keys(required).forEach(req => {
-    const opt = options[req]
+  required.forEach(req => {
+    const opt = parsed.argv[req]
     if (is.empty(opt)) {
       errors.push(req)
     }
