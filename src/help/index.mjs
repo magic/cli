@@ -43,5 +43,14 @@ export const maybeHelp = args => {
     help.example,
   ]
 
+  const errors = parsed.errors
+    .map(e => [log.paint('red', 'Error:'), `${e} is required`].join(' '))
+    .filter(a => a)
+
+  const errorMsg = `\n${errors}`
+  if (errors.length) {
+    helpArray.push(errorMsg)
+  }
+
   return helpArray.filter(a => a).join('')
 }
