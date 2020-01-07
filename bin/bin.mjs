@@ -37,10 +37,5 @@ bin/bin.mjs hello --name World
 const { args, commands } = cli(cliArgs)
 
 if (commands.hello) {
-  let { name } = args
-  if (Array.isArray(name)) {
-    name = name[0]
-  }
-
-  log.success('hello,', name)
+  log.success('hello,', args.name)
 }
