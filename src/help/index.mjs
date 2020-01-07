@@ -1,4 +1,5 @@
 import log from '@magic/log'
+import is from '@magic/types'
 
 import { envToHelp } from './envToHelp.mjs'
 import { argToHelp } from './argToHelp.mjs'
@@ -8,11 +9,13 @@ export const maybeHelp = args => {
   const hasArgs = Object.values(parsed).some(a => Object.entries(a).length)
   const flags = ['help', 'h', '-h', '--h', '--help']
   const hasCommands = args.commands && Object.entries(args.commands).length > 0
-  const showHelp = hasCommands && Object.keys(parsed.commands).length === 0
+  const showCommandHelp = hasCommands && Object.keys(parsed.commands).length === 0
 
   const helpRequested = parsed.args.help
 
-  if (!showHelp && !helpRequested) {
+  const showHelp = showCommandHelp || helpRequested || !is.empty(parsed.errors)
+
+  if (!showHelp) {
     return false
   }
 
