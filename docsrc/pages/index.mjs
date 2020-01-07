@@ -276,33 +276,6 @@ const argv = cli(args)
   },
 }`),
 
-  h2({ id: 'changelog' }, 'changelog'),
-
-  h3('0.0.3'),
-  p('error if spawned process errors. (process.exit(1)'),
-
-  h3('0.0.4'),
-  p('console output now aligns'),
-
-  h3('0.0.5'),
-  p('node 12.4.0 does not have --experimental-node-modules flag.'),
-
-  h3('0.0.6'),
-  p('readd --experimental-node-modules flag for 13.1.0+'),
-
-  h3('0.0.7'),
-  p('bump node version'),
-  p('update @magic/log'),
-
-  h3('0.0.8'),
-  p('help is shown if commands exist but none are given'),
-
-  h3('0.0.9'),
-  p('update dependencies'),
-
-  h3('0.0.10'),
-  p('update dependencies'),
-
   h2({ id: 'source' }, 'source'),
   p([
     'the source for this page is in the ',
