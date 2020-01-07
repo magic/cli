@@ -95,6 +95,12 @@ const res = cli({
   default: {
     '--default-key': 'default-value',
   },
+  required: [
+    '--default-key',
+  ],
+  single: [
+    '--default-key',
+  ],
   env: [[['--production', '--prod', '--p', '-p'], 'NODE_ENV', 'production']],
   pure: true, // do neither change process.argv nor process.env
   pureArgv: true, // do not change process.argv
@@ -236,6 +242,39 @@ flags:
 environment switches:
 dev: set process.NODE_ENV to development - aliases ["development"]
 `
+```
+
+### <a name="clean"></a>clean
+some cli arguments will be expected to return a string instead of a list of arguments.
+
+this can be achieved using the single array
+```javascript
+const args = {
+  options: [['--single', '-s']],
+  single: ['--single'],
+}
+
+const res = cli(args)
+
+console.log(res)
+```
+
+
+### <a name="required"></a>required
+some cli arguments will be required.
+
+this can be achieved using the required array.
+
+if a required field is missing, a error message and the help will be shown.
+```javascript
+const args = {
+  options: [['--required', '-r']],
+  required: ['--required'],
+}
+
+const res = cli(args)
+
+console.log(res)
 ```
 
 
