@@ -18,6 +18,8 @@ export const state = {
         { to: '-default', text: 'default' },
       ],
     },
+    { to: '/#clean', text: 'clean' },
+    { to: '/#required', text: 'required' },
     { to: '/#source', text: 'source' },
   ],
 }

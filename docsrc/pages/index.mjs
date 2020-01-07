@@ -61,7 +61,7 @@ export const View = state => [
   Pre(`
 #!/usr/bin/env node
 
-// ./bin.js
+// ./bin.mjs
 const spawnCli = require('@magic/cli')
 
 const argv = ['--flag1', '--flag2', '/file/path/cli.mjs']
@@ -88,6 +88,12 @@ const { argv, env, commands } = cli({
   default: {
     '--default-key': 'default-value',
   },
+  single: [
+    '--default-key',
+  ],
+  required: [
+    '--default-key',
+  ],
   env: [[['--production', '--prod', '--p', '-p'], 'NODE_ENV', 'production']],
   pure: true, // do neither change process.argv nor process.env
   pureArgv: true, // do not change process.argv
@@ -100,13 +106,13 @@ const { argv, env, commands } = cli({
   p(['using the ', Link({ to: '/#usage' }, 'cli file'), ' above']),
 
   p('then, in your terminal / bash'),
-  Pre('bin.js -f1 arg1 arg2 -f2'),
+  Pre('bin.mjs -f1 arg1 arg2 -f2'),
 
   p('resulting process.argv'),
   Pre(`
 process.argv = [
   '/path/to/bin/node',
-  '/path/to/bin.js',
+  '/path/to/bin.mjs',
   '--flag1'
   'arg1',
   'arg2',
@@ -131,7 +137,7 @@ const args = {
 const argv = cli(args)
 
 // call
-./bin.js dev serve
+./bin.mjs dev serve
 
 // results:
 {
@@ -161,7 +167,7 @@ const args = {
 const argv = cli(args)
 
 // running
-./bin.js
+./bin.mjs
 // without arguments
 
 // help output
@@ -209,7 +215,7 @@ const args = {
 const argv = cli(args)
 
 // running
-./bin.js
+./bin.mjs
 // without arguments
 
 // help output
@@ -227,6 +233,41 @@ flags:
 environment switches:
 dev: set process.NODE_ENV to development - aliases ["development"]
 \``),
+
+
+h4({ id: 'clean' }, 'clean'),
+p('some cli arguments will be expected to return a string instead of a list of arguments.'),
+
+p('this can be achieved using the single array'),
+
+Pre(`
+const args = {
+  options: [['--single', '-s']],
+  single: ['--single'],
+}
+
+const res = cli(args)
+
+console.log(res)
+`),
+
+h4({ id: 'required' }, 'required'),
+p('some cli arguments will be required.'),
+
+p('this can be achieved using the required array.'),
+
+p('if a required field is missing, a error message and the help will be shown.'),
+
+Pre(`
+const args = {
+  options: [['--required', '-r']],
+  required: ['--required'],
+}
+
+const res = cli(args)
+
+console.log(res)
+`),
 
   h3({ id: 'config' }, 'configuration'),
   p('there are some configuration parameters that can be passed to the cli function'),
