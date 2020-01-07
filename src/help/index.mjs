@@ -46,6 +46,7 @@ export const maybeHelp = args => {
   const errors = parsed.errors
     .map(e => [log.paint('red', 'Error:'), `${e} is required`].join(' '))
     .filter(a => a)
+    .join('\n')
 
   const errorMsg = `\n${errors}`
   if (errors.length) {
