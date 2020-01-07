@@ -374,7 +374,7 @@ update deps
 ##### 0.0.15
 cli will always provide --help and -h flags to show help
 
-##### 0.0.16 - unreleased
+##### 0.0.16
 * args can be set to be single now, making them return a .join(' ')ed string instead of an array
 * args can be set to be required now, making the cli error and show the help if they are not.
 
