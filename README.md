@@ -277,10 +277,8 @@ const res = cli(args)
 console.log(res)
 ```
 
-
 ### <a name="config"></a>configuration
 there are some configuration parameters that can be passed to the cli function
-
 
 #### <a name="config-pure"></a>pure
 ```javascript
