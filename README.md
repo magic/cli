@@ -293,47 +293,51 @@ const argv = cli(args)
 
 ### Changelog
 
-#### 0.0.3
+##### 0.0.3
 cli's should now correctly process.exit(1) on error of the spawned process.
 
-#### 0.0.4
+##### 0.0.4
 console help output now aligns nicely
 
-#### 0.0.5
+##### 0.0.5
 node 12.4.0 does not have --experimental-node-modules fladg.
 
-#### 0.0.6
+##### 0.0.6
 readd --experimental-node-modules flag for 13.1.0+
 
-#### 0.0.7
+##### 0.0.7
 update dependencies
 bump node version
 
-#### 0.0.8
+##### 0.0.8
 help is shown if cli has commands but none are given
 
-#### 0.0.9
+##### 0.0.9
 update dependencies
 
-#### 0.0.10
+##### 0.0.10
 update dependencies
 
-#### 0.0.11
+##### 0.0.11
 * parsed.args added. is copy of argv, but using camelCased keys without leading --.
 * no commonjs fallback, ecmascript modules all the way
 * parsed does not return aliases. env, argv, args, commands. thats it.
 
-#### 0.0.12
+##### 0.0.12
 add @magic/cases dependency
 
-#### 0.0.13
+##### 0.0.13
 update deps
 
-#### 0.0.14
+##### 0.0.14
 --help works for cli scripts without commands too
 
-#### 0.0.15
+##### 0.0.15
 cli will always provide --help and -h flags to show help
 
-#### 0.0.16 - unreleased
+##### 0.0.16 - unreleased
+* args can be set to be single now, making them return a .join(' ')ed string instead of an array
+* args can be set to be required now, making the cli error and show the help if they are not.
+
+##### 0.0.17 - unreleased
 ...
