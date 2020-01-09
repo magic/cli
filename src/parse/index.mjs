@@ -13,13 +13,15 @@ export const parse = props => {
   const { argv, args } = parseArgv({ ...props, pure: pureArgv })
   const commands = parseCommands({ ...props, pure: pureCommands })
 
-  const parsed = clean({
+  const cli = {
     env,
     argv,
     args,
     commands,
     errors: [],
-  }, props)
+  }
+
+  const parsed = clean(cli, props)
 
   parsed.errors = parseRequired({ props, parsed })
 
