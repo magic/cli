@@ -376,5 +376,9 @@ cli will always provide --help and -h flags to show help
 * args can be set to be single now, making them return a .join(' ')ed string instead of an array
 * args can be set to be required now, making the cli error and show the help if they are not.
 
-##### 0.0.17 - unreleased
+##### 0.0.17
+required args can now be an array. this allows '--a' or '--b' to be required. 
+errors if both are given.
+
+##### 0.0.18 - unreleased
 ...
