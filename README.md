@@ -384,5 +384,8 @@ errors if both are given.
 * the command `cli-name all` now automagically sets all available commands to true.
 * command keys will always be set to a boolean, return false if task is supposed to not be active.
 
-#### 0.0.19 - unreleased
+##### 0.0.19
+regression: calling cli that has commands without commands will show help again.
+
+##### 0.0.20 - unreleased
 ...
