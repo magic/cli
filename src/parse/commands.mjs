@@ -36,8 +36,8 @@ export const parseCommands = ({ commands = [], pure = false }) => {
       if (!pure) {
         argv[idx] = key
       }
-    } else {
-      cmds[key] = runAll
+    } else if (runAll) {
+      cmds[key] = true
     }
   })
 
