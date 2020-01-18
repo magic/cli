@@ -8,8 +8,8 @@ export const maybeHelp = args => {
   const { parsed } = args
   const hasArgs = Object.values(parsed).some(a => Object.entries(a).length)
   const flags = ['help', 'h', '-h', '--h', '--help']
-  const hasCommands = args.commands && Object.entries(args.commands).filter(([_, a]) => !a).length > 0
-  const showCommandHelp = !hasCommands || Object.keys(parsed.commands).length === 0
+  const hasCommands = args.commands && Object.entries(args.commands).length > 0
+  const showCommandHelp = hasCommands && Object.keys(parsed.commands).length === 0
 
   const helpRequested = parsed.args.help
 
