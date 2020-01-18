@@ -393,5 +393,8 @@ regression: calling cli that has commands without commands will show help again.
 ##### 0.0.20
 regression: make commands only have keys for active commands again
 
-##### 0.0.21 - unreleased
+##### 0.0.21
+finally get rid of the command regressions
+
+##### 0.0.22 - unreleased
 ...
