@@ -330,6 +330,9 @@ const argv = cli(args)
 
 ### Changelog
 
+##### 0.0.1
+first release
+
 ##### 0.0.3
 cli's should now correctly process.exit(1) on error of the spawned process.
 
@@ -387,5 +390,8 @@ errors if both are given.
 ##### 0.0.19
 regression: calling cli that has commands without commands will show help again.
 
-##### 0.0.20 - unreleased
+##### 0.0.20
+regression: make commands only have keys for active commands again
+
+##### 0.0.21 - unreleased
 ...
