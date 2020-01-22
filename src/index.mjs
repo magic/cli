@@ -4,6 +4,9 @@ import log from '@magic/log'
 import { maybeHelp } from './help/index.mjs'
 import { parse } from './parse/index.mjs'
 
+import { exec as execute } from './exec.mjs'
+import { prompt as promptUser } from './prompt.mjs'
+
 export const cli = (args = {}) => {
   let hasHelpOption = args.options.some(option => option.includes('--help'))
   if (!hasHelpOption) {
@@ -22,17 +25,12 @@ export const cli = (args = {}) => {
   return parsed
 }
 
-export const exec = (cmd, args = []) => {
-  const opts = {
-    cwd: process.cwd(),
-    env: process.env,
-    stdio: 'inherit',
-  }
-  return child_process.spawn(cmd, args, opts)
-}
+export const exec = execute
+export const spawn = execute
 
-export const spawn = exec
+cli.spawn = cli.exec = execute
 
-cli.spawn = cli.exec = exec
+export const prompt = promptUser
+cli.prompt = promptUser
 
 export default cli
