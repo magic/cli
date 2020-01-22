@@ -1,7 +1,12 @@
 import readline from 'readline'
 
-export const prompt = (std, { firstLine = true, yesNo = false }) =>
+import log from '@magic/log'
+
+export const prompt = (std, { msg = '', firstLine = true, yesNo = false }) =>
   new Promise((resolve, reject) => {
+    if (msg) {
+      log(msg)
+    }
     const rl = readline.createInterface({
       input: stdin,
       output: stdout,
