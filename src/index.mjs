@@ -8,10 +8,14 @@ import { exec as execute } from './exec.mjs'
 import { prompt as promptUser } from './prompt/index.mjs'
 
 export const cli = (args = {}) => {
-  let hasHelpOption = args.options.some(option => option.includes('--help'))
+  const { options = [] } = args
+
+  const hasHelpOption = options.some(option => option.includes('--help'))
   if (!hasHelpOption) {
-    args.options.push(['--help', '-h'])
+    options.push(['--help', '-h'])
   }
+
+  args.options = options
 
   const parsed = parse(args)
 
