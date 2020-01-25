@@ -5,7 +5,7 @@ import { maybeHelp } from './help/index.mjs'
 import { parse } from './parse/index.mjs'
 
 import { exec as execute } from './exec.mjs'
-import { prompt as promptUser } from './prompt.mjs'
+import { prompt as promptUser } from './prompt/index.mjs'
 
 export const cli = (args = {}) => {
   let hasHelpOption = args.options.some(option => option.includes('--help'))

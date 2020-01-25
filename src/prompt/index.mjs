@@ -1,16 +1,26 @@
+import fs from 'fs'
 import readline from 'readline'
 
 import log from '@magic/log'
 
-export const prompt = (std, { msg = '', yesNo = false }) =>
+import PasswordStream from './PasswordStream.mjs'
+
+export const prompt = ({ msg = '', yesNo = false, pass = false, std = process }) =>
   new Promise((resolve, reject) => {
-    if (msg) {
-      log(msg)
-    }
+
+    const pwStream = new PasswordStream(std.stdout)
+
     const rl = readline.createInterface({
-      input: stdin,
-      output: stdout,
+      input: data => {
+        // data = '*'
+        console.log({data});
+        std.stdin.write(data)
+      },
+      output: pwStream,
+      prompt: msg,
     })
+
+    rl.prompt()
 
     rl.on('line', line => {
       if (yesNo) {
