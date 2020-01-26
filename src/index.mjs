@@ -5,6 +5,7 @@ import { maybeHelp } from './help/index.mjs'
 import { parse } from './parse/index.mjs'
 
 import { exec as execute } from './exec.mjs'
+import { spawn as spawner } from './spawn.mjs'
 import { prompt as promptUser } from './prompt/index.mjs'
 
 export const cli = (args = {}) => {
@@ -29,10 +30,11 @@ export const cli = (args = {}) => {
   return parsed
 }
 
-export const exec = execute
-export const spawn = execute
+export const spawn = spawner
+cli.spawn = spawner
 
-cli.spawn = cli.exec = execute
+export const exec = execute
+cli.exec = execute
 
 export const prompt = promptUser
 cli.prompt = promptUser
