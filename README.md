@@ -396,5 +396,10 @@ regression: make commands only have keys for active commands again
 ##### 0.0.21
 finally get rid of the command regressions
 
-##### 0.0.22 - unreleased
+##### 0.0.22
+* add cli.prompt to get user input.
+* do not error if args.options is empty
+* exec and spawn now are separate functions corresponding to node builtins
+
+##### 0.0.23 - unreleased
 ...
