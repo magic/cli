@@ -401,5 +401,8 @@ finally get rid of the command regressions
 * do not error if args.options is empty
 * exec and spawn now are separate functions corresponding to node builtins
 
-##### 0.0.23 - unreleased
+##### 0.0.23
+* cli.prompt: change call signature, remove PasswordStream
+
+##### 0.0.24 - unreleased
 ...
