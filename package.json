@@ -31,7 +31,7 @@
   ],
   "dependencies": {
     "@magic/cases": "0.0.2",
-    "@magic/log": "0.1.3",
+    "@magic/log": "0.1.4",
     "@magic/types": "0.1.11"
   },
   "devDependencies": {
