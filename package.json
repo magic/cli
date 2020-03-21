@@ -42,7 +42,7 @@
     "@magic-themes/docs": "0.0.6",
     "@magic/core": "0.0.61",
     "@magic/format": "0.0.7",
-    "@magic/test": "0.1.38"
+    "@magic/test": "0.1.39"
   },
   "author": "Wizards & Witches",
   "license": "AGPL-3.0",
