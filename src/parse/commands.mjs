@@ -21,9 +21,7 @@ export const parseCommands = ({ commands = [], pure = false }) => {
       if (runAll) {
         key = tasks[0]
       } else {
-        const idxArray = tasks
-          .filter(task => argv.includes(task))
-          .map(task => argv.indexOf(task))
+        const idxArray = tasks.filter(task => argv.includes(task)).map(task => argv.indexOf(task))
 
         idx = idxArray[0]
         key = tasks[0]

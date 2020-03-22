@@ -5,9 +5,7 @@ import log from '@magic/log'
 import cli from '../src/index.mjs'
 
 const cliArgs = {
-  options: [
-    ['--name', '-n'],
-  ],
+  options: [['--name', '-n']],
   commands: ['hello'],
   help: {
     name: 'magic-cli hello world',
@@ -26,12 +24,8 @@ bin/bin.mjs hello --name World
   default: {
     '--name': 'World',
   },
-  single: [
-    '--name',
-  ],
-  required: [
-    '--name'
-  ],
+  single: ['--name'],
+  required: ['--name'],
 }
 
 const { args, commands } = cli(cliArgs)
