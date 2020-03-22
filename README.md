@@ -405,4 +405,7 @@ finally get rid of the command regressions
 * cli.prompt: change call signature, remove PasswordStream
 
 ##### 0.0.24 - unreleased
+* fix required node version
+
+##### 0.0.25 - unreleased
 ...
