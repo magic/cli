@@ -12,13 +12,14 @@
     "dev": "magic dev",
     "calls": "calls"
   },
-  "engine": {
-    "node": ">=13.5.0"
-  },
   "main": "src/index.mjs",
   "files": [
     "src"
   ],
+  "engines": {
+    "node": ">=13.5.0"
+  },
+  "engineStrict": true,
   "repository": {
     "type": "git",
     "url": "git+https://github.com/magic/cli.git"
