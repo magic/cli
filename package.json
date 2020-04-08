@@ -42,8 +42,8 @@
     "@magic-modules/pre": "0.0.7",
     "@magic-themes/docs": "0.0.6",
     "@magic/core": "0.0.65",
-    "@magic/format": "0.0.7",
-    "@magic/test": "0.1.40"
+    "@magic/format": "0.0.8",
+    "@magic/test": "0.1.41"
   },
   "author": "Wizards & Witches",
   "license": "AGPL-3.0",
