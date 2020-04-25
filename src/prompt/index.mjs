@@ -7,6 +7,18 @@ export const prompt = (msg = '', options = {}) =>
   new Promise((resolve, reject) => {
     const { yesNo = false, pass = false, std = process, yesDefault = false } = options
 
+    if (yesNo) {
+      if (yesDefault) {
+        if (!msg.includes('Y/n')) {
+          msg += '(Y/n): '
+        }
+      } else {
+        if (!msg.includes('y/N')) {
+          msg += '(y/N): '
+        }
+      }
+    }
+
     const rl = readline.createInterface({
       input: std.stdin,
       output: std.stdout,
