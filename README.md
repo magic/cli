@@ -408,5 +408,9 @@ finally get rid of the command regressions
 * fix required node version
 * update dependencies 
 
-##### 0.0.25 - unreleased
+##### 0.0.25 
+* prompt now has a yesDefault option
+* prompt will add y/N or Y/n to the prompt message if it is missing
+
+##### 0.0.26 - unreleased
 ...
