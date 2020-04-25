@@ -5,7 +5,7 @@ import log from '@magic/log'
 
 export const prompt = (msg = '', options = {}) =>
   new Promise((resolve, reject) => {
-    const { yesNo = false, pass = false, std = process } = options
+    const { yesNo = false, pass = false, std = process, yesDefault = false } = options
 
     const rl = readline.createInterface({
       input: std.stdin,
@@ -17,7 +17,8 @@ export const prompt = (msg = '', options = {}) =>
 
     rl.on('line', line => {
       if (yesNo) {
-        line = line.trim().toLowerCase() === 'y' || line.trim().toLowerCase() === 'yes'
+        const trimmed = line.trim().toLowerCase()
+        line = trimmed === 'y' || trimmed === 'yes' || yesDefault
       }
 
       resolve(line)
