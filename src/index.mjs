@@ -6,7 +6,7 @@ import { parse } from './parse/index.mjs'
 
 import { exec as execute } from './exec.mjs'
 import { spawn as spawner } from './spawn.mjs'
-import { prompt as promptUser } from './prompt/index.mjs'
+import { prompt as promptUser } from './prompt.mjs'
 
 export const cli = (args = {}) => {
   const { options = [] } = args
