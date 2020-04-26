@@ -20,10 +20,10 @@ export const maybeHelp = args => {
   }
 
   // add help text inspection here
-  const { commands = [], options = [], env = [], help = '' } = args
+  const { commands = [], default: defaults = [], options = [], env = [], help = '' } = args
 
   const commandHelp = argToHelp(commands, help.commands)
-  const optionHelp = argToHelp(options, help.options)
+  const optionHelp = argToHelp(options, help.options, defaults)
   const envHelp = envToHelp(env, help.env)
 
   const name = help.name || '@magic/cli wrapped cli.'
@@ -36,9 +36,6 @@ export const maybeHelp = args => {
     commands.length && `${log.paint('grey', 'commands')}:\n${commandHelp}\n\n`,
     options.length && `${log.paint('grey', 'flags')}:\n${optionHelp}\n\n`,
     env.length && `${log.paint('grey', 'environment switches')}:\n${envHelp}\n\n`,
-    // prependHelp,
-    // appendHelp,
-    // defaultHelp,
     'examples:\n',
     help.example,
   ]
