@@ -412,5 +412,8 @@ finally get rid of the command regressions
 * prompt now has a yesDefault option
 * prompt will add y/N or Y/n to the prompt message if it is missing
 
-##### 0.0.26 - unreleased
+##### 0.0.26
+* default help arguments are now output by default.
+
+##### 0.0.27 - unreleased
 ...
