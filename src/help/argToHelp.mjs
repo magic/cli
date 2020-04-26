@@ -3,7 +3,7 @@ import log from '@magic/log'
 
 import { findLongestString } from './findLongestString.mjs'
 
-export const argToHelp = (arr, help = {}) => {
+export const argToHelp = (arr, help = {}, defaults = {}) => {
   const longest = findLongestString(arr)
 
   return arr
@@ -25,6 +25,10 @@ export const argToHelp = (arr, help = {}) => {
 
       if (help[name]) {
         res += ` - ${help[name]}`
+      }
+
+      if (defaults[name]) {
+        res += ` - default: ${defaults[name]}`
       }
 
       if (aliases.length) {
