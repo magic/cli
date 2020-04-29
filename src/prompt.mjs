@@ -8,14 +8,18 @@ export const prompt = (msg = '', options = {}) =>
     const { yesNo = false, pass = false, std = process, yesDefault = false } = options
 
     if (yesNo) {
+      let flag = 'y/N'
+
       if (yesDefault) {
-        if (!msg.includes('Y/n')) {
-          msg += '(Y/n): '
-        }
-      } else {
-        if (!msg.includes('y/N')) {
-          msg += '(y/N): '
-        }
+        flag = 'Y/n'
+      }
+
+      if (!msg.endsWith(' ')) {
+        msg += ' '
+      }
+
+      if (!msg.includes(flag)) {
+        msg += `(${flag}): `
       }
     }
 
