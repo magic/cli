@@ -406,14 +406,17 @@ finally get rid of the command regressions
 
 ##### 0.0.24
 * fix required node version
-* update dependencies 
+* update dependencies
 
-##### 0.0.25 
+##### 0.0.25
 * prompt now has a yesDefault option
 * prompt will add y/N or Y/n to the prompt message if it is missing
 
 ##### 0.0.26
 * default help arguments are now output by default.
 
-##### 0.0.27 - unreleased
+##### 0.0.27
+nicer output for prompt messages
+
+##### 0.0.28 - unreleased
 ...
