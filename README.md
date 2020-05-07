@@ -418,5 +418,8 @@ finally get rid of the command regressions
 ##### 0.0.27
 nicer output for prompt messages
 
-##### 0.0.28 - unreleased
+##### 0.0.28
+bump required node version to 14.2.0
+
+##### 0.0.29 - unreleased
 ...
