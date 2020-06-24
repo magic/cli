@@ -4,5 +4,5 @@ export default {
   THEME: 'docs',
   WEB_ROOT: '/cli/',
   URL: 'magic.github.io/cli',
-  HOIST: ['Gdpr', 'LightSwitch'],
+  HOIST: ['NoSpy', 'LightSwitch'],
 }
