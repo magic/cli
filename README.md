@@ -422,4 +422,5 @@ nicer output for prompt messages
 bump required node version to 14.2.0
 
 ##### 0.0.29 - unreleased
+* update dependencies
 ...
