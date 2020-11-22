@@ -424,7 +424,7 @@ bump required node version to 14.2.0
 ##### 0.0.29
 update dependencies
 
-##### 0.0.30 - unreleased
+##### 0.0.30
 * update dependencies
 
 ##### 0.0.31 - unreleased
