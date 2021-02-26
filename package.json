@@ -33,7 +33,7 @@
   "dependencies": {
     "@magic/cases": "0.0.4",
     "@magic/log": "0.1.8",
-    "@magic/types": "0.1.14"
+    "@magic/types": "0.1.15"
   },
   "devDependencies": {
     "@magic-modules/git-badges": "0.0.11",
