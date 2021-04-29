@@ -13,6 +13,7 @@
     "calls": "calls"
   },
   "main": "src/index.mjs",
+  "type": "module",
   "files": [
     "src"
   ],
