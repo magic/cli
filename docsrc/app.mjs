@@ -14,7 +14,7 @@ export const state = {
       text: 'configuration',
       items: [
         { to: '-pure', text: 'pure' },
-        { to: '-prepend-append', text: 'append / prepend' },
+        { to: '-prependappend', text: 'append / prepend' },
         { to: '-default', text: 'default' },
       ],
     },
