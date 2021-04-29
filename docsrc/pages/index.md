@@ -318,5 +318,5 @@ const argv = cli(args)
 ## source
 
 the source for this page is in the
-[example directory](https://github.com/magic/cli/tree/master/example)
+[docsrc directory](https://github.com/magic/cli/tree/master/docsrc)
 and gets built and published to github using [@magic/core](https://github.com/magic/core)
