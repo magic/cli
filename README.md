@@ -431,5 +431,8 @@ update dependencies
 * bump required node version to 14.15.4
 * update dependencies
 
-##### 0.0.32 - unreleased
+##### 0.0.32
+update dependencies
+
+##### 0.0.33 - unreleased
 ...
