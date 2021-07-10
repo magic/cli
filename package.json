@@ -42,9 +42,9 @@
     "@magic-modules/no-spy": "0.0.6",
     "@magic-modules/pre": "0.0.10",
     "@magic-themes/docs": "0.0.13",
-    "@magic/core": "0.0.120",
-    "@magic/format": "0.0.23",
-    "@magic/test": "0.1.68"
+    "@magic/core": "0.0.125",
+    "@magic/format": "0.0.24",
+    "@magic/test": "0.1.70"
   },
   "author": "Wizards & Witches",
   "license": "AGPL-3.0",
