@@ -50,8 +50,9 @@ ecmascript modules only. no commonjs support.
 ### <a name="dependencies"></a>dependencies:
 * [@magic/log](https://github.com/magic/log): console.log wrapper with loglevels
 * [@magic/types](https://github.com/magic/types): type checking library
+* [@magic/types](https://github.com/magic/cases): case checking library (CamelCase, snake_case, kebab-case)
 
-@magic/log and @magic/types have no dependencies.
+@magic/log, @magic/cases and @magic/types have no dependencies.
 
 ### <a name="install"></a>install
 be in a node ecmascript module project.
@@ -434,7 +435,7 @@ update dependencies
 ##### 0.0.32
 update dependencies
 
-##### 0.0.33 
+##### 0.0.33
 update dependencies
 
 ##### 0.0.34 - unreleased
