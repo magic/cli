@@ -1,4 +1,5 @@
 import log from '@magic/log'
+import is from '@magic/types'
 
 export const parseCommands = (props = {}) => {
   const { commands = [], pure = false } = props
@@ -9,14 +10,14 @@ export const parseCommands = (props = {}) => {
     let key
     let idx = -1
 
-    if (typeof tasks === 'string') {
+    if (is.string(tasks)) {
       if (argv.includes(tasks)) {
         idx = argv.indexOf(tasks)
         key = tasks
       } else if (runAll) {
         key = tasks
       }
-    } else if (Array.isArray(tasks)) {
+    } else if (is.array(tasks)) {
       if (runAll) {
         key = tasks[0]
       } else {
