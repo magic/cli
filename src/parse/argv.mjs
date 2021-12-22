@@ -64,14 +64,14 @@ export const parseArgv = ({
   }
 
   let argvPrepend = []
-  if (!Array.isArray(prepend)) {
+  if (!is.array(prepend)) {
     argvPrepend.push(prepend)
   } else if (prepend.length) {
     Object.entries(prepend).forEach(([k, v]) => {
       argv[k] = v
 
       argvPrepend.push(k)
-      if (!Array.isArray(v)) {
+      if (!is.array(v)) {
         argvPrepend.push(v)
       } else {
         argvPrepend = [...argvPrepend, ...v]
@@ -80,7 +80,7 @@ export const parseArgv = ({
   }
 
   let argvAppend = []
-  if (!Array.isArray(append)) {
+  if (!is.array(append)) {
     argvAppend.push(append)
   } else if (append.length) {
     Object.entries(append)

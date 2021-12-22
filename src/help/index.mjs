@@ -25,7 +25,7 @@ export const maybeHelp = args => {
   const envHelp = envToHelp(env, help.env)
 
   const name = help.name || '@magic/cli wrapped cli.'
-  const header = typeof help === 'string' ? help : help.text
+  const header = is.string(help) ? help : help.text
 
   const helpArray = [
     log.paint('green', name),
