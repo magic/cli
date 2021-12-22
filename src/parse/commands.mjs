@@ -1,10 +1,11 @@
+import log from '@magic/log'
+
 export const parseCommands = (props = {}) => {
   const { commands = [], pure = false } = props
   const { argv } = process
   const runAll = argv.includes('all')
 
-  const cmds = {}
-  commands.forEach((tasks = []) => {
+  const cmds = Object.fromEntries(commands.map((tasks = []) => {
     let key
     let idx = -1
 
@@ -15,11 +16,7 @@ export const parseCommands = (props = {}) => {
       } else if (runAll) {
         key = tasks
       }
-    } else {
-      if (!Array.isArray(tasks)) {
-        tasks = [tasks]
-      }
-
+    } else if (Array.isArray(tasks)) {
       if (runAll) {
         key = tasks[0]
       } else {
@@ -28,18 +25,20 @@ export const parseCommands = (props = {}) => {
         idx = idxArray[0]
         key = tasks[0]
       }
+    } else {
+      log.error('E_UNEXPECTED_TASK', `@magic/cli: got unexpected task type: ${typeof tasks}, can handle strings or arrays`)
     }
 
     if (idx > -1) {
-      cmds[key] = true
-
       if (!pure) {
         argv[idx] = key
       }
+
+      return [ key, true ]
     } else if (runAll) {
-      cmds[key] = true
+      return [ key, true ]
     }
-  })
+  }).filter(a => a))
 
   return cmds
 }
