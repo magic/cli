@@ -19,6 +19,6 @@ export const exec = (cmd, options = {}) =>
         return
       }
 
-      resolve(stdout.trim())
+      resolve(stdout)
     })
   })
