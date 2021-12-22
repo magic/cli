@@ -1,20 +1,16 @@
 import is from '@magic/types'
+import deep from '@magic/deep'
 
 export const findLongestString = arr => {
-  const longest = arr.sort((a, b) => {
-    if (is.array(a)) {
-      a = findLongestString(a)
+  arr = deep.flatten(arr)
+
+  const sorted = arr.sort((a, b) => {
+    if (a.length !== b.length) {
+      return b.length - a.length
     }
-    if (is.array(b)) {
-      b = findLongestString(b)
-    }
 
-    return a.length > b.length ? -1 : 1
-  })[0]
+    return a - b ? 1 : -1
+  })
 
-  if (is.array(longest)) {
-    return longest[0]
-  }
-
-  return longest
+  return sorted[ 0 ]
 }
