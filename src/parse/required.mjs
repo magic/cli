@@ -1,7 +1,7 @@
 import is from '@magic/types'
 
-export const parseRequired = ({ props, parsed }) => {
-  const { options, required } = props
+export const parseRequired = (args = {}) => {
+  const { parsed, props: { required } } = args
 
   if (is.empty(required)) {
     return []
