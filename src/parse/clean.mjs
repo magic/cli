@@ -1,20 +1,27 @@
 import is from '@magic/types'
 import cases from '@magic/cases'
 
-export const clean = (cli, props) => {
+export const clean = (cli, props = {}) => {
   if (is.empty(props.single)) {
     return cli
   }
 
   props.single.map(s => {
-    if (cli.argv[s] && is.array(cli.argv[s])) {
-      cli.argv[s] = cli.argv[s].join(' ')
-    }
-
     const c = cases.camel(s)
+    const def = props.default && (props.default[s] || props.default[c])
 
-    if (cli.args[c] && is.array(cli.args[c])) {
-      cli.args[c] = cli.args[c].join(' ')
+    const a = cli.argv[s]
+
+    if (!is.empty(a)) {
+      const str = is.array(a) ? a.join(' ') : a
+
+      if (str) {
+        cli.argv[s] = str
+        cli.args[c] = str
+      }
+    } else if (def) {
+      cli.argv[s] = def
+      cli.args[c] = def
     }
   })
 
