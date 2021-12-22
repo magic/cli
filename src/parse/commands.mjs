@@ -1,11 +1,13 @@
-export const parseCommands = ({ commands = [], pure = false }) => {
+export const parseCommands = (props = {}) => {
+  const { commands = [], pure = false } = props
   const { argv } = process
   const runAll = argv.includes('all')
 
   const cmds = {}
-  commands.map((tasks = []) => {
+  commands.forEach((tasks = []) => {
     let key
     let idx = -1
+
     if (typeof tasks === 'string') {
       if (argv.includes(tasks)) {
         idx = argv.indexOf(tasks)
