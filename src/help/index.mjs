@@ -6,8 +6,6 @@ import { argToHelp } from './argToHelp.mjs'
 
 export const maybeHelp = args => {
   const { parsed } = args
-  const hasArgs = Object.values(parsed).some(a => Object.entries(a).length)
-  const flags = ['help', 'h', '-h', '--h', '--help']
   const hasCommands = args.commands && Object.entries(args.commands).length > 0
   const showCommandHelp = hasCommands && Object.keys(parsed.commands).length === 0
 
