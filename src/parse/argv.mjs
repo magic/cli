@@ -19,6 +19,7 @@ export const parseArgv = ({
     }
 
     if (arg.startsWith('-')) {
+      // this is a key
       let argvArg
       options.forEach(option => {
         if (is.array(option)) {
@@ -37,6 +38,7 @@ export const parseArgv = ({
         }
       }
     } else {
+      // this is a value
       if (lastArg) {
         argv[lastArg].push(arg)
       }
