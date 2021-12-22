@@ -441,5 +441,13 @@ update dependencies
 ##### 0.0.34
 update dependencies
 
-##### 0.0.35 - unreleased
+##### 0.0.35
+* parse now can get an opts object as third argument to overwrite child_process.exec options
+* help.argToHelp now errors if the first argument is not an array, before errors only got triggered by falsy arg.
+* exec now uses @magic/error for errors.
+* exec does not trim() the result.
+* findLongestString sorts by length and then alphabetically
+* update dependencies
+
+##### 0.0.36 - unreleased
 ...
