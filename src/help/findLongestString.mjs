@@ -8,7 +8,7 @@ export const findLongestString = arr => {
       return b.length - a.length
     }
 
-    return a - b ? 1 : -1
+    return a > b ? 1 : -1
   })
 
   return sorted[0]
