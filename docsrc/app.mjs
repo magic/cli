@@ -20,6 +20,15 @@ export const state = {
     },
     { to: '/#clean', text: 'clean' },
     { to: '/#required', text: 'required' },
+    {
+      to: '/#helpers',
+      text: 'helpers',
+      items: [
+        { to: '-exec', text: 'cli.exec' },
+        { to: '-execfile', text: 'cli.execFile' },
+        { to: '-spawn', text: 'cli.spawn' },
+      ],
+    },
     { to: '/#source', text: 'source' },
   ],
 }

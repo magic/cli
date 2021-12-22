@@ -30,12 +30,11 @@ depending on your requirements, these caveats may or may not apply.
   ##### workaround
 
   do not design a cli with a trailing command.
-  TODO: add a config bool.
 
 * #### option argument and command name clash
 
   if one of your options gets an argument that is equal to a command,
-  this command will be executed
+  this command will be executed.
 
   ##### workaround
   do not name your commands like the possible arguments.
@@ -313,6 +312,51 @@ const argv = cli(args)
     '--default-key': 'default-value',
   },
 }
+```
+
+#### helpers
+
+@magic/cli exports multiple promisified child_process commands.
+
+##### #helpers- exec
+
+```
+import cli from '@magic/cli'
+
+const execOptions = {
+  // any child_process.exec options
+}
+
+const {
+  err,
+  stderr,
+  stdout
+} = await cli.exec('cmd --flag Flag', execOptions)
+```
+
+##### #helpers- execFile
+
+```
+const execFileOptions = {
+  // any child_process.execFile options
+}
+
+const {
+  err,
+  stderr,
+  stdout,
+} = await cli.execFile('/path/to/file.x', ['--flag', 'Flag'], execFileOptions)
+```
+
+##### #helpers- spawn
+
+```
+const spawnOptions = {
+  // any child_process.spawn options
+}
+
+const spawnedProcess = cli.spawn('program', ['--flag', 'Flag'], spawnOptions)
+
 ```
 
 ## source
