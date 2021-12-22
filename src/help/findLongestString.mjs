@@ -1,4 +1,3 @@
-import is from '@magic/types'
 import deep from '@magic/deep'
 
 export const findLongestString = arr => {
@@ -12,5 +11,5 @@ export const findLongestString = arr => {
     return a - b ? 1 : -1
   })
 
-  return sorted[ 0 ]
+  return sorted[0]
 }
