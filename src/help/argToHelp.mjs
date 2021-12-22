@@ -7,7 +7,7 @@ import { findLongestString } from './findLongestString.mjs'
 const lib = '@magic/cli.help.argToHelp'
 
 export const argToHelp = (arr, help = {}, defaults = {}) => {
-  if (!arr) {
+  if (!Array.isArray(arr)) {
     throw error(
       `${lib} expects the first argument to be a non-empty array, received: ${arr}`,
       'E_MISSING_ARGUMENT',
