@@ -1,9 +1,19 @@
 import is from '@magic/types'
 import log from '@magic/log'
+import error from '@magic/error'
 
 import { findLongestString } from './findLongestString.mjs'
 
+const lib = '@magic/cli.help.argToHelp'
+
 export const argToHelp = (arr, help = {}, defaults = {}) => {
+  if (!arr) {
+    throw error(
+      `${lib} expects the first argument to be a non-empty array, received: ${arr}`,
+      'E_MISSING_ARGUMENT',
+    )
+  }
+
   const longest = findLongestString(arr)
 
   return arr
@@ -19,6 +29,7 @@ export const argToHelp = (arr, help = {}, defaults = {}) => {
       let res = log.paint('yellow', name)
 
       const dist = longest.length - name.length
+
       const placeholder = Array(dist + 1).join(' ')
 
       res += placeholder
