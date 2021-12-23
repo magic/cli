@@ -447,6 +447,7 @@ update dependencies
 * exec now uses @magic/error for errors.
 * exec does not trim() the result.
 * findLongestString sorts by length and then alphabetically
+* export execFile
 * update dependencies
 
 ##### 0.0.36 - unreleased
