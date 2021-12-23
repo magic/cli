@@ -5,6 +5,7 @@ import { maybeHelp } from './help/index.mjs'
 import { parse } from './parse/index.mjs'
 
 import { exec as execute } from './exec.mjs'
+import { execFile as executeFile } from './execFile.mjs'
 import { spawn as spawner } from './spawn.mjs'
 import { prompt as promptUser } from './prompt.mjs'
 
@@ -38,5 +39,8 @@ cli.exec = execute
 
 export const prompt = promptUser
 cli.prompt = promptUser
+
+export const execFile = executeFile
+cli.execFile = executeFile
 
 export default cli
