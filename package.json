@@ -35,7 +35,7 @@
     "@magic/cases": "0.0.6",
     "@magic/deep": "0.1.9",
     "@magic/error": "0.0.11",
-    "@magic/log": "0.1.10",
+    "@magic/log": "0.1.11",
     "@magic/types": "0.1.17"
   },
   "devDependencies": {
