@@ -32,11 +32,11 @@
     "declarative"
   ],
   "dependencies": {
-    "@magic/cases": "0.0.5",
-    "@magic/deep": "0.1.8",
-    "@magic/error": "0.0.10",
+    "@magic/cases": "0.0.6",
+    "@magic/deep": "0.1.9",
+    "@magic/error": "0.0.11",
     "@magic/log": "0.1.10",
-    "@magic/types": "0.1.16"
+    "@magic/types": "0.1.17"
   },
   "devDependencies": {
     "@magic-modules/git-badges": "0.0.11",
