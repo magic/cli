@@ -99,7 +99,7 @@ export const parseArgv = ({
 
   if (!pure) {
     const argvArgs = [argv1, argv2, ...argvAppend, ...argvRest, ...argvPrepend].filter(
-      a => a.length > 0,
+      a => a && a.length > 0,
     )
 
     process.argv = argvArgs
