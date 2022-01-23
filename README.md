@@ -459,5 +459,9 @@ update dependencies
 ##### 0.0.38
 update dependencies
 
-##### 0.0.39 - unreleased
+##### 0.0.39
+* update devdependencies
+* parse.argv does not error if args do not have a length
+
+##### 0.0.40 - unreleased
 ...
