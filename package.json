@@ -32,11 +32,11 @@
     "declarative"
   ],
   "dependencies": {
-    "@magic/cases": "0.0.6",
-    "@magic/deep": "0.1.10",
-    "@magic/error": "0.0.12",
-    "@magic/log": "0.1.13",
-    "@magic/types": "0.1.18"
+    "@magic/cases": "0.0.7",
+    "@magic/deep": "0.1.11",
+    "@magic/error": "0.0.13",
+    "@magic/log": "0.1.14",
+    "@magic/types": "0.1.19"
   },
   "devDependencies": {
     "@magic-modules/git-badges": "0.0.11",
@@ -44,9 +44,9 @@
     "@magic-modules/no-spy": "0.0.6",
     "@magic-modules/pre": "0.0.11",
     "@magic-themes/docs": "0.0.14",
-    "@magic/core": "0.0.136",
-    "@magic/format": "0.0.37",
-    "@magic/test": "0.2.5"
+    "@magic/core": "0.0.139",
+    "@magic/format": "0.0.38",
+    "@magic/test": "0.2.8"
   },
   "author": "Wizards & Witches",
   "license": "AGPL-3.0",
