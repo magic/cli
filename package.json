@@ -1,6 +1,6 @@
 {
   "name": "@magic/cli",
-  "version": "0.0.40",
+  "version": "0.0.41",
   "homepage": "https://magic.github.io/cli",
   "description": "declarative command line interfaces with aliasing, commands and environment sanitization",
   "scripts": {
