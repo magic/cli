@@ -472,5 +472,8 @@ update dependencies
 ##### 0.0.42
 update dependencies
 
-##### 0.0.43 - unreleased
+##### 0.0.43
+update dependencies
+
+##### 0.0.44 - unreleased
 ...
