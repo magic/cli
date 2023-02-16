@@ -4,13 +4,11 @@ import { argToHelp } from '../../src/help/argToHelp.mjs'
 
 const argToHelpCommandOutput =
   '\u001b[33mtest\u001b[39m  - test output\n\u001b[33mtest2\u001b[39m - test2 output'
-const argToHelpCommandOutputWithDefaults =
-  `\x1B[33mtest\x1B[39m  - test output - default: \x1B[32m'default test'\x1B[39m\n\x1B[33mtest2\x1B[39m - test2 output - default: \x1B[32m'default test2'\x1B[39m`
+const argToHelpCommandOutputWithDefaults = `\x1B[33mtest\x1B[39m  - test output - default: \x1B[32m'default test'\x1B[39m\n\x1B[33mtest2\x1B[39m - test2 output - default: \x1B[32m'default test2'\x1B[39m`
 
 const argToHelpFlagOutput =
   '\u001b[33m--test\u001b[39m  - alias: ["\u001b[33m--t\u001b[39m", "\u001b[33m-t\u001b[39m"]\n\u001b[33m--test2\u001b[39m'
-const argToHelpFlagOutputWithDefaults =
-  `\x1B[33m--test\x1B[39m  - test output - default: \x1B[32m'default --test'\x1B[39m - alias: ["\x1B[33m--t\x1B[39m", "\x1B[33m-t\x1B[39m"]\n\x1B[33m--test2\x1B[39m - test2 output`
+const argToHelpFlagOutputWithDefaults = `\x1B[33m--test\x1B[39m  - test output - default: \x1B[32m'default --test'\x1B[39m - alias: ["\x1B[33m--t\x1B[39m", "\x1B[33m-t\x1B[39m"]\n\x1B[33m--test2\x1B[39m - test2 output`
 
 export default [
   {
