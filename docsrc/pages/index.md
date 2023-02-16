@@ -23,7 +23,8 @@ there are some quirks that need some careful consideration when designing a cli 
 
 depending on your requirements, these caveats may or may not apply.
 
-* #### last argument
+- #### last argument
+
   if your last argument does not have a corresponding flag,
   it will still be assigned to the last flag prior to it.
 
@@ -31,18 +32,21 @@ depending on your requirements, these caveats may or may not apply.
 
   do not design a cli with a trailing command.
 
-* #### option argument and command name clash
+- #### option argument and command name clash
 
   if one of your options gets an argument that is equal to a command,
   this command will be executed.
 
   ##### workaround
+
   do not name your commands like the possible arguments.
 
-* #### flag arguments can not start with a dash
+- #### flag arguments can not start with a dash
+
   cli arguments that start with a - will always be treated as flags, not values.
 
   ##### workaround
+
   do not design a cli that accepts arguments that start with a -
 
 those issues might get addressed in the future.

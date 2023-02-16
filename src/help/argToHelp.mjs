@@ -41,7 +41,7 @@ export const argToHelp = (arr, help = {}, defaults = {}) => {
       if (defaults[name]) {
         let val = defaults[name]
         if (is.string(val)) {
-          val = `'${val.replace(/'/gim, "\'")}'`
+          val = `'${val.replace(/'/gim, "'")}'`
         }
 
         res += ` - default: ${log.paint('green', val)}`
