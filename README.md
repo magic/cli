@@ -538,7 +538,8 @@ update dependencies
 
 ##### 0.0.44
 
-update dependencies
+- update dependencies
+- add colors to default arg output
 
 ##### 0.0.45 - unreleased
 
