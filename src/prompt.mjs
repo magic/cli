@@ -1,11 +1,13 @@
-import fs from 'fs'
+import is from '@magic/types'
 import readline from 'readline'
-
-import log from '@magic/log'
 
 export const prompt = (msg = '', options = {}) =>
   new Promise((resolve, reject) => {
     const { yesNo = false, std = process, yesDefault = false } = options
+
+    if (is.array(msg)) {
+      msg = msg.join(' ')
+    }
 
     if (yesNo) {
       let flag = 'y/N'
