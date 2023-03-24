@@ -29,13 +29,15 @@ export const maybeHelp = args => {
 
   const exampleArray = is.string(help.example) ? help.example.split('\n') : help.example
 
-  const exampleText = exampleArray.map(a => {
-    if (a.trim().startsWith('#')) {
-      return log.color('green', a)
-    } else {
-      return a.trim()
-    }
-  }).join('\n')
+  const exampleText = exampleArray
+    .map(a => {
+      if (a.trim().startsWith('#')) {
+        return log.color('green', a)
+      } else {
+        return a.trim()
+      }
+    })
+    .join('\n')
 
   const helpArray = [
     log.paint('green', name),
