@@ -27,6 +27,16 @@ export const maybeHelp = args => {
   const name = help.name || '@magic/cli wrapped cli.'
   const header = is.string(help) ? help : help.text
 
+  const exampleArray = is.string(help.example) ? help.example.split('\n') : help.example
+
+  const exampleText = exampleArray.map(a => {
+    if (a.trim().startsWith('#')) {
+      return log.color('green', a)
+    } else {
+      return a.trim()
+    }
+  }).join('\n')
+
   const helpArray = [
     log.paint('green', name),
     '\n',
@@ -35,7 +45,7 @@ export const maybeHelp = args => {
     options.length && `${log.paint('grey', 'flags')}:\n${optionHelp}\n\n`,
     env.length && `${log.paint('grey', 'environment switches')}:\n${envHelp}\n\n`,
     'examples:\n',
-    help.example,
+    exampleText,
   ]
 
   const errors = parsed.errors
