@@ -543,4 +543,6 @@ update dependencies
 
 ##### 0.0.45 - unreleased
 
+* help.example can be an array
+* update dependencies
 ...
