@@ -545,4 +545,5 @@ update dependencies
 
 - help.example can be an array
 - update dependencies
+- cli.prompt - msg can be an array
   ...
