@@ -541,9 +541,12 @@ update dependencies
 - update dependencies
 - add colors to default arg output
 
-##### 0.0.45 - unreleased
+##### 0.0.45
 
 - help.example can be an array
 - update dependencies
 - cli.prompt - msg can be an array
-  ...
+
+##### 0.0.46 - unreleased
+
+- ...
