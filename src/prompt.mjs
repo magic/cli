@@ -5,7 +5,7 @@ import log from '@magic/log'
 
 export const prompt = (msg = '', options = {}) =>
   new Promise((resolve, reject) => {
-    const { yesNo = false, pass = false, std = process, yesDefault = false } = options
+    const { yesNo = false, std = process, yesDefault = false } = options
 
     if (yesNo) {
       let flag = 'y/N'
