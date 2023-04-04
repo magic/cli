@@ -6,7 +6,9 @@ const libName = '@magic/cli.exec'
 
 export const exec = (cmd, options = {}) =>
   new Promise((resolve, reject) => {
-    child_process.exec(cmd, options, (err, stdout, stderr) => {
+    const { stderrToStdout, ...opts } = options
+
+    child_process.exec(cmd, opts, (err, stdout, stderr) => {
       if (err) {
         const e = error(err, 'E_EXEC_ERR')
         reject(e)
@@ -14,6 +16,11 @@ export const exec = (cmd, options = {}) =>
       }
 
       if (stderr) {
+        if (stderrToStdout) {
+          resolve(stderr)
+          return
+        }
+
         const e = error(new Error(`${libName}: ${cmd} error: ${stderr}`), 'E_EXEC_STDERR')
         reject(e)
         return
