@@ -547,6 +547,11 @@ update dependencies
 - update dependencies
 - cli.prompt - msg can be an array
 
-##### 0.0.46 - unreleased
+##### 0.0.46
+
+- cli.exec allows stderrToStdout redirect config option
+- update dependencies
+
+##### 0.0.47 - unreleased
 
 - ...
