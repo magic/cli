@@ -2,7 +2,7 @@ import is from '@magic/types'
 import log from '@magic/log'
 import error from '@magic/error'
 
-import { findLongestString } from './findLongestString.mjs'
+import { findLongestString } from './findLongestString.js'
 
 const lib = '@magic/cli.help.argToHelp'
 

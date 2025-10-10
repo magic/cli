@@ -90,7 +90,7 @@ _those issues might get addressed in the future._
 first, define the cli file
 
 ```javascript
-// ./bin.mjs
+// ./bin.js
 import { cli } from '@magic/cli'
 
 const res = cli({
@@ -120,7 +120,7 @@ argv mappings handle options and option aliases
 using the cli file above
 
 ```bash
-./bin.mjs -f1 arg1 arg2 -f2
+./bin.js -f1 arg1 arg2 -f2
 ```
 
 resulting process.argv:
@@ -128,7 +128,7 @@ resulting process.argv:
 ```javascript
 process.argv = [
   '/path/to/bin/node',
-  '/path/to/bin.mjs',
+  '/path/to/bin.js',
   'cmd1',
   '--flag1'
   'arg1',
@@ -169,7 +169,7 @@ cli commands will be handled too.
 #### <a name="help-simple"></a>simple help message
 
 ```javascript
-// ./bin.mjs
+// ./bin.js
 
 import cli from '@magic/cli'
 
@@ -183,10 +183,10 @@ const args = {
 const argv = cli(args)
 ```
 
-then run ./bin.mjs without arguments
+then run ./bin.js without arguments
 
 ```bash
-./bin.mjs
+./bin.js
 
 // help output
 `

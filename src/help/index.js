@@ -1,8 +1,8 @@
 import log from '@magic/log'
 import is from '@magic/types'
 
-import { envToHelp } from './envToHelp.mjs'
-import { argToHelp } from './argToHelp.mjs'
+import { envToHelp } from './envToHelp.js'
+import { argToHelp } from './argToHelp.js'
 
 export const maybeHelp = args => {
   const { parsed } = args

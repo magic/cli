@@ -1,8 +1,8 @@
-import { parseEnv } from './env.mjs'
-import { parseArgv } from './argv.mjs'
-import { parseCommands } from './commands.mjs'
-import { parseRequired } from './required.mjs'
-import { clean } from './clean.mjs'
+import { parseEnv } from './env.js'
+import { parseArgv } from './argv.js'
+import { parseCommands } from './commands.js'
+import { parseRequired } from './required.js'
+import { clean } from './clean.js'
 
 export const parse = props => {
   const { pure = false } = props

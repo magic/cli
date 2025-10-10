@@ -1,5 +1,5 @@
 import { is, version } from '@magic/test'
-import { cli, prompt, exec, execFile, spawn } from '../src/index.mjs'
+import { cli, prompt, exec, execFile, spawn } from '../src/index.js'
 
 const spec = {
   spawn: 'fn',

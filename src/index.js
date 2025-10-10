@@ -1,13 +1,13 @@
 import child_process from 'child_process'
 import log from '@magic/log'
 
-import { maybeHelp } from './help/index.mjs'
-import { parse } from './parse/index.mjs'
+import { maybeHelp } from './help/index.js'
+import { parse } from './parse/index.js'
 
-import { exec as execute } from './exec.mjs'
-import { execFile as executeFile } from './execFile.mjs'
-import { spawn as spawner } from './spawn.mjs'
-import { prompt as promptUser } from './prompt.mjs'
+import { exec as execute } from './exec.js'
+import { execFile as executeFile } from './execFile.js'
+import { spawn as spawner } from './spawn.js'
+import { prompt as promptUser } from './prompt.js'
 
 export const cli = (args = {}) => {
   const { options = [] } = args

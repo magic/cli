@@ -2,7 +2,7 @@
 
 import log from '@magic/log'
 
-import cli from '../src/index.mjs'
+import cli from '../src/index.js'
 
 const cliArgs = {
   options: [['--name', '-n']],
@@ -18,7 +18,7 @@ const cliArgs = {
     },
     example: `
 # the obligatory
-bin/bin.mjs hello --name World
+bin/bin.js hello --name World
 `,
   },
   default: {

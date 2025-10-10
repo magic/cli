@@ -1,6 +1,6 @@
 import { deep } from '@magic/test'
 
-import { parseCommands } from '../../src/parse/commands.mjs'
+import { parseCommands } from '../../src/parse/commands.js'
 
 export default [
   {

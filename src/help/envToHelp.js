@@ -1,6 +1,6 @@
 import log from '@magic/log'
 
-import { findLongestString } from './findLongestString.mjs'
+import { findLongestString } from './findLongestString.js'
 
 export const envToHelp = env => {
   const envStrings = env.map(env => env[0])

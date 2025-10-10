@@ -1,6 +1,6 @@
 import { tryCatch } from '@magic/test'
 
-import { argToHelp } from '../../src/help/argToHelp.mjs'
+import { argToHelp } from '../../src/help/argToHelp.js'
 
 const argToHelpCommandOutput =
   '\u001b[33mtest\u001b[39m  - test output\n\u001b[33mtest2\u001b[39m - test2 output'

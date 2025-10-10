@@ -1,6 +1,6 @@
 import { deep } from '@magic/test'
 
-import { clean } from '../../src/parse/clean.mjs'
+import { clean } from '../../src/parse/clean.js'
 
 const cliSingleFlagUsed = {
   env: [],
@@ -45,7 +45,7 @@ const props = {
     header: 'used to test the cli library.',
     commands: { hello: 'echo hello ${name}' },
     options: { '--name': 'name to hello to' },
-    example: '\n# the obligatory\nbin/bin.mjs hello --name World\n',
+    example: '\n# the obligatory\nbin/bin.js hello --name World\n',
   },
   required: ['--name'],
 }

@@ -1,4 +1,4 @@
-import { findLongestString } from '../../src/help/findLongestString.mjs'
+import { findLongestString } from '../../src/help/findLongestString.js'
 
 const strings = ['a', 'bbbbbbbb', 'ab', 'abc', 'abcd']
 

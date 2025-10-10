@@ -12,7 +12,7 @@
     "dev": "magic dev",
     "calls": "calls"
   },
-  "main": "src/index.mjs",
+  "main": "src/index.js",
   "type": "module",
   "files": [
     "src"
