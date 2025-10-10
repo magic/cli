@@ -6,6 +6,15 @@ import { findLongestString } from './findLongestString.js'
 
 const lib = '@magic/cli.help.argToHelp'
 
+/**
+ * Converts an array of CLI argument definitions into a formatted help string.
+ *
+ * @param {(string | string[])[]} arr - Array of argument names or alias arrays.
+ * @param {Record<string, string>} [help={}] - Optional help descriptions keyed by argument name.
+ * @param {Record<string, any>} [defaults={}] - Default values for each argument.
+ * @returns {string} A formatted help text block.
+ * @throws {Error} If `arr` is not a valid array.
+ */
 export const argToHelp = (arr, help = {}, defaults = {}) => {
   if (!is.array(arr)) {
     throw error(
@@ -19,6 +28,7 @@ export const argToHelp = (arr, help = {}, defaults = {}) => {
   return arr
     .map(opt => {
       let name = opt
+      /** @type {string[]} */
       let aliases = []
       if (is.array(name)) {
         const [n, ...al] = opt

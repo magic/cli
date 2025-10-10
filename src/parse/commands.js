@@ -1,6 +1,18 @@
 import log from '@magic/log'
 import is from '@magic/types'
 
+/**
+ * @typedef {object} ParseCommandsProps
+ * @property {Array<string|string[]>} [commands] - Commands or alias arrays to check.
+ * @property {boolean} [pure=false] - If true, do not modify process.argv.
+ */
+
+/**
+ * Parses CLI commands from process.argv.
+ *
+ * @param {ParseCommandsProps} props
+ * @returns {Record<string, boolean>} - Commands found in argv keyed by name.
+ */
 export const parseCommands = (props = {}) => {
   const { commands = [], pure = false } = props
   const { argv } = process
@@ -38,7 +50,7 @@ export const parseCommands = (props = {}) => {
         }
 
         if (idx > -1) {
-          if (!pure) {
+          if (!pure && !is.undefined(key)) {
             argv[idx] = key
           }
 
@@ -47,7 +59,7 @@ export const parseCommands = (props = {}) => {
           return [key, true]
         }
       })
-      .filter(a => a),
+      .filter(a => !is.undefined(a)),
   )
 
   return cmds

@@ -1,8 +1,20 @@
 import log from '@magic/log'
 
 import { findLongestString } from './findLongestString.js'
+import is from '@magic/types'
 
+/**
+ * Converts an array of environment variable definitions into formatted help text.
+ *
+ * @param {Array<[string[], string, string]>} env - Array of tuples:
+ *   [command aliases, variable name, value description].
+ * @returns {string} A formatted help text block for environment variables.
+ */
 export const envToHelp = env => {
+  if (!env || !is.array(env)) {
+    return ''
+  }
+
   const envStrings = env.map(env => env[0])
 
   const longest = findLongestString(envStrings)

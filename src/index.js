@@ -1,4 +1,3 @@
-import child_process from 'child_process'
 import log from '@magic/log'
 
 import { maybeHelp } from './help/index.js'
@@ -9,6 +8,12 @@ import { execFile as executeFile } from './execFile.js'
 import { spawn as spawner } from './spawn.js'
 import { prompt as promptUser } from './prompt.js'
 
+/**
+ * Main CLI entry point
+ * @param {object} args - CLI configuration object.
+ * @param {(string | string[])[]} [args.options=[]] - Command-line options array.
+ * @returns {object} Parsed CLI data.
+ */
 export const cli = (args = {}) => {
   const { options = [] } = args
 
