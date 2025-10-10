@@ -9,10 +9,34 @@ import { spawn as spawner } from './spawn.js'
 import { prompt as promptUser } from './prompt.js'
 
 /**
+ * @typedef {object} ParseProps
+ * @property {Array<string|string[]>} [options]
+ * @property {Record<string, any>|Array<any>} [prepend]
+ * @property {Record<string, any>|Array<any>} [append]
+ * @property {Record<string, any>} [default]
+ * @property {boolean} [pure]
+ * @property {boolean} [pureEnv]
+ * @property {boolean} [pureArgv]
+ * @property {boolean} [pureCommands]
+ * @property {Array<string|string[]>} [commands]
+ * @property {Array<[string[], string, string]>} [env]
+ * @property {Array<string|string[]>} [required]
+ * @property {object} [help]
+ */
+
+/**
+ * @typedef {object} ParsedCLI
+ * @property {Record<string, string>} env
+ * @property {Record<string, any>} argv
+ * @property {Record<string, any>} args
+ * @property {Record<string, boolean>} commands
+ * @property {Array<string|string[]>} errors
+ */
+
+/**
  * Main CLI entry point
- * @param {object} args - CLI configuration object.
- * @param {(string | string[])[]} [args.options=[]] - Command-line options array.
- * @returns {object} Parsed CLI data.
+ * @param {ParseProps} args - CLI configuration object.
+ * @returns {ParsedCLI}
  */
 export const cli = (args = {}) => {
   const { options = [] } = args

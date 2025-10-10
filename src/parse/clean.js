@@ -10,9 +10,9 @@ import cases from '@magic/cases'
 /**
  * Cleans CLI parsed arguments for single-value keys, applying defaults.
  *
- * @param {import('./index.js').ParsedCLI} cli
+ * @param {import('../index.js').ParsedCLI} cli
  * @param {CleanProps} [props={}]
- * @returns {import('./index.js').ParsedCLI}
+ * @returns {import('../index.js').ParsedCLI}
  */
 export const clean = (cli, props = {}) => {
   if (is.empty(props.single)) {
