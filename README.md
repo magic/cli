@@ -552,6 +552,12 @@ update dependencies
 - cli.exec allows stderrToStdout redirect config option
 - update dependencies
 
-##### 0.0.47 - unreleased
+##### 0.0.47
+
+- rename .mjs to js
+- add more tests
+- update dependencies
+
+##### 0.0.48 - unreleased
 
 - ...
