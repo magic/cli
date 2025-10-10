@@ -558,6 +558,10 @@ update dependencies
 - add more tests
 - update dependencies
 
-##### 0.0.48 - unreleased
+##### 0.0.48
+
+- types changed to allow correct props when calling /src/index.js cli function
+
+##### 0.0.49 - unreleased
 
 - ...
