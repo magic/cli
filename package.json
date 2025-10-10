@@ -7,15 +7,19 @@
     "start": "t -p",
     "format": "f -w --exclude docs",
     "test": "t --exclude docs example config.js",
-    "build": "NODE_ENV=production magic build",
+    "build": "tsc && npm run format",
+    "prepublishOnly": "npm run test && npm run build",
+    "build:docs": "NODE_ENV=production magic build",
     "prod": "NODE_ENV=production magic build serve",
     "dev": "magic dev",
     "calls": "calls"
   },
   "main": "src/index.js",
+  "types": "types/index.d.ts",
   "type": "module",
   "files": [
-    "src"
+    "src",
+    "types"
   ],
   "engines": {
     "node": ">=14.15.4"
