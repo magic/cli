@@ -1,7 +1,7 @@
 export function clean(
-  cli: import('./index.js').ParsedCLI,
+  cli: import('../index.js').ParsedCLI,
   props?: CleanProps,
-): import('./index.js').ParsedCLI
+): import('../index.js').ParsedCLI
 export type CleanProps = {
   /**
    * - List of single-value argument keys to clean.

@@ -1,4 +1,4 @@
-export function cli(args?: { options?: (string | string[])[] | undefined }): object
+export function cli(args?: ParseProps): ParsedCLI
 export namespace cli {
   export { spawner as spawn }
   export { execute as exec }
@@ -30,6 +30,27 @@ export const execFile: (
   opts?: import('child_process').ExecFileOptions,
 ) => Promise<string | Buffer>
 export default cli
+export type ParseProps = {
+  options?: (string | string[])[] | undefined
+  prepend?: any[] | Record<string, any> | undefined
+  append?: any[] | Record<string, any> | undefined
+  default?: Record<string, any> | undefined
+  pure?: boolean | undefined
+  pureEnv?: boolean | undefined
+  pureArgv?: boolean | undefined
+  pureCommands?: boolean | undefined
+  commands?: (string | string[])[] | undefined
+  env?: [string[], string, string][] | undefined
+  required?: (string | string[])[] | undefined
+  help?: object | undefined
+}
+export type ParsedCLI = {
+  env: Record<string, string>
+  argv: Record<string, any>
+  args: Record<string, any>
+  commands: Record<string, boolean>
+  errors: Array<string | string[]>
+}
 import { spawn as spawner } from './spawn.js'
 import { exec as execute } from './exec.js'
 import { prompt as promptUser } from './prompt.js'
