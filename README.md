@@ -562,6 +562,10 @@ update dependencies
 
 - types changed to allow correct props when calling /src/index.js cli function
 
-##### 0.0.49 - unreleased
+##### 0.0.49
+
+- update dependencies
+
+##### 0.0.50 - unreleased
 
 - ...
