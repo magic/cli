@@ -580,6 +580,10 @@ update dependencies
 
 - actually publish the types from 0.0.51.
 
-##### 0.0.53 - unreleased
+##### 0.0.53
+
+- export exec, execFile and spawn option types
+
+##### 0.0.54 - unreleased
 
 - ...
