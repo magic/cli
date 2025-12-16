@@ -1,5 +1,6 @@
 export function execFile(
   p: string,
   args?: string[],
-  opts?: import('child_process').ExecFileOptions,
+  opts?: child_process.ExecFileOptions,
 ): Promise<string | Buffer>
+import child_process from 'child_process'

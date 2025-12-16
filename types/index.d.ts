@@ -12,8 +12,8 @@ export const spawn: (
 ) => import('child_process').ChildProcess
 export const exec: (
   cmd: string,
-  options?: {
-    stderrToStdout?: boolean | undefined
+  options?: import('child_process').ExecOptionsWithStringEncoding & {
+    stderrToStdout: boolean
   },
 ) => Promise<string>
 export const prompt: (
