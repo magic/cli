@@ -18,6 +18,7 @@ import { prompt as promptUser } from './prompt.js'
  * @property {boolean} [pureEnv]
  * @property {boolean} [pureArgv]
  * @property {boolean} [pureCommands]
+ * @property {string[]} [single]
  * @property {Array<string|string[]>} [commands]
  * @property {Array<[string[], string, string]>} [env]
  * @property {Array<string|string[]>} [required]
