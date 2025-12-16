@@ -39,6 +39,7 @@ export type ParseProps = {
   pureEnv?: boolean | undefined
   pureArgv?: boolean | undefined
   pureCommands?: boolean | undefined
+  single?: string[] | undefined
   commands?: (string | string[])[] | undefined
   env?: [string[], string, string][] | undefined
   required?: (string | string[])[] | undefined
