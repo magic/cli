@@ -8,7 +8,7 @@ const libName = '@magic/cli.execFile'
  * Executes a file using child_process.execFile
  * @param {string} p - Path to the executable file.
  * @param {string[]} [args=[]] - Arguments to pass to the executable.
- * @param {import('child_process').ExecFileOptions} [opts={}] - Execution options.
+ * @param {child_process.ExecFileOptions} [opts={}] - Execution options.
  * @returns {Promise<string | Buffer>} Resolves with stdout, rejects with Error.
  */
 export const execFile = (p, args = [], opts = {}) =>
