@@ -1,5 +1,6 @@
 export function spawn(
   cmd: string,
   args?: string[],
-  opt?: import('child_process').SpawnOptions,
+  options?: CLISpawnOptions,
 ): import('child_process').ChildProcess
+export type CLISpawnOptions = import('child_process').SpawnOptions

@@ -4,15 +4,18 @@ import error from '@magic/error'
 
 const libName = '@magic/cli.execFile'
 
+/** @typedef {child_process.ExecFileOptions & { stderrToStdout?: boolean }} CLIExecFileOptions  */
+
 /**
  * Executes a file using child_process.execFile
  * @param {string} p - Path to the executable file.
  * @param {string[]} [args=[]] - Arguments to pass to the executable.
- * @param {child_process.ExecFileOptions} [opts={}] - Execution options.
+ * @param {CLIExecFileOptions} [options={}] - Execution options.
  * @returns {Promise<string | Buffer>} Resolves with stdout, rejects with Error.
  */
-export const execFile = (p, args = [], opts = {}) =>
+export const execFile = (p, args = [], options = {}) =>
   new Promise((resolve, reject) => {
+    const { stderrToStdout = false, ...opts } = options
     child_process.execFile(
       p,
       args.filter(a => a),
@@ -23,10 +26,16 @@ export const execFile = (p, args = [], opts = {}) =>
           reject(err)
           return
         }
+
         if (stderr) {
-          const e = error(new Error(`${libName}: error: ${stderr}`), 'E_EXECFILE_STDERR')
-          reject(e)
-          return
+          if (stderrToStdout) {
+            resolve(stderr)
+            return
+          } else {
+            const e = error(new Error(`${libName}: error: ${stderr}`), 'E_EXECFILE_STDERR')
+            reject(e)
+            return
+          }
         }
 
         resolve(stdout)

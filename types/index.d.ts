@@ -8,14 +8,9 @@ export namespace cli {
 export const spawn: (
   cmd: string,
   args?: string[],
-  opt?: import('child_process').SpawnOptions,
+  options?: import('./spawn.js').CLISpawnOptions,
 ) => import('child_process').ChildProcess
-export const exec: (
-  cmd: string,
-  options?: import('child_process').ExecOptionsWithStringEncoding & {
-    stderrToStdout: boolean
-  },
-) => Promise<string>
+export const exec: (cmd: string, options?: import('./exec.js').CLIExecOptions) => Promise<string>
 export const prompt: (
   msg?: string | string[],
   options?: {
@@ -27,7 +22,7 @@ export const prompt: (
 export const execFile: (
   p: string,
   args?: string[],
-  opts?: import('child_process').ExecFileOptions,
+  options?: import('./execFile.js').CLIExecFileOptions,
 ) => Promise<string | Buffer>
 export default cli
 export type ParseProps = {
@@ -52,6 +47,9 @@ export type ParsedCLI = {
   commands: Record<string, boolean>
   errors: Array<string | string[]>
 }
+export type CLIExecFileOptions = import('./execFile.js').CLIExecFileOptions
+export type CLIExecOptions = import('./exec.js').CLIExecOptions
+export type CLISpawnOptions = typeof import('./spawn.js')
 import { spawn as spawner } from './spawn.js'
 import { exec as execute } from './exec.js'
 import { prompt as promptUser } from './prompt.js'

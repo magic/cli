@@ -4,10 +4,12 @@ import error from '@magic/error'
 
 const libName = '@magic/cli.exec'
 
+/** @typedef {child_process.ExecOptionsWithStringEncoding & { stderrToStdout?: boolean }} CLIExecOptions  */
+
 /**
  * Executes a shell command using child_process.exec
  * @param {string} cmd - The shell command to execute.
- * @param {child_process.ExecOptionsWithStringEncoding & { stderrToStdout: boolean }} [options = {}] - Execution options.
+ * @param {CLIExecOptions} [options = {}] - Execution options.
  * @returns {Promise<string>} Resolves with stdout or stderr (if stderrToStdout = true), rejects with Error.
  */
 export const exec = (cmd, options) =>

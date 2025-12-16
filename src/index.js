@@ -73,4 +73,8 @@ cli.prompt = promptUser
 export const execFile = executeFile
 cli.execFile = executeFile
 
+/** @typedef {import('./execFile.js').CLIExecFileOptions} CLIExecFileOptions */
+/** @typedef {import('./exec.js').CLIExecOptions} CLIExecOptions */
+/** @typedef {import('./spawn.js')} CLISpawnOptions*/
+
 export default cli

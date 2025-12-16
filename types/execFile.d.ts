@@ -1,6 +1,9 @@
 export function execFile(
   p: string,
   args?: string[],
-  opts?: child_process.ExecFileOptions,
+  options?: CLIExecFileOptions,
 ): Promise<string | Buffer>
+export type CLIExecFileOptions = child_process.ExecFileOptions & {
+  stderrToStdout?: boolean
+}
 import child_process from 'child_process'
