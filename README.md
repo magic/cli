@@ -576,6 +576,10 @@ update dependencies
 
 - exec and execFile options are correctly typed
 
-##### 0.0.52 - unreleased
+##### 0.0.52
+
+- actually publish the types from 0.0.51.
+
+##### 0.0.53 - unreleased
 
 - ...
