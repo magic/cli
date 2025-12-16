@@ -572,6 +572,10 @@ update dependencies
 - types: add single to ParseProps
 - update dependencies
 
-##### 0.0.51 - unreleased
+##### 0.0.51
+
+- exec and execFile options are correctly typed
+
+##### 0.0.52 - unreleased
 
 - ...
