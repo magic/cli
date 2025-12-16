@@ -568,12 +568,10 @@ update dependencies
 
 ##### 0.0.50
 
+- remove empty test file
+- types: add single to ParseProps
 - update dependencies
 
-##### 0.0.51
-
-- types: add single to ParseProps
-
-##### 0.0.52 - unreleased
+##### 0.0.51 - unreleased
 
 - ...
