@@ -76,4 +76,24 @@ export default [
     expect: t => is.deep.equal(t.argv, {}),
     info: 'parseArgv returns empty argv if no args given',
   },
+  {
+    fn: () =>
+      parseArgv({
+        options: [['--flag', '-f']],
+        append: { '--flag': 'value' },
+      }),
+    expect: t => is.deep.equal(t.argv, { '--flag': ['value'] }),
+    info: 'parseArgv handles append as ArgMap',
+  },
+  {
+    fn: () =>
+      parseArgv({
+        options: [['--flag', '-f']],
+        prepend: { '--prepend': 'pval' },
+        append: { '--append': 'aval' },
+      }),
+    expect: t =>
+      is.deep.equal(t.argv['--prepend'], ['pval']) && is.deep.equal(t.argv['--append'], ['aval']),
+    info: 'parseArgv handles both prepend and append as ArgMap',
+  },
 ]
