@@ -9,7 +9,7 @@ export const spawn: (
   cmd: string,
   args?: string[],
   options?: import('./spawn.js').CLISpawnOptions,
-) => import('child_process').ChildProcess
+) => import('node:child_process').ChildProcess
 export const exec: (cmd: string, options?: import('./exec.js').CLIExecOptions) => Promise<string>
 export const prompt: (
   msg?: string | string[],
