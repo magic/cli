@@ -584,6 +584,10 @@ update dependencies
 
 - export exec, execFile and spawn option types
 
-##### 0.0.54 - unreleased
+##### 0.0.54
+
+- update dependencies
+
+##### 0.0.55 - unreleased
 
 - ...
