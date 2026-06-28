@@ -589,6 +589,10 @@ update dependencies
 - update types
 - update dependencies
 
-##### 0.0.55 - unreleased
+##### 0.0.55
+
+- update dependencies
+
+##### 0.0.56 - unreleased
 
 - ...
